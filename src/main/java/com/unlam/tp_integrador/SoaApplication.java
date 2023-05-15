@@ -1,4 +1,4 @@
-package com.unlam.tpIntegrador;
+package com.unlam.tp_integrador;
 
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Info;

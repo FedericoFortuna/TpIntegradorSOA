@@ -1,9 +1,9 @@
-package com.unlam.tpIntegrador.service;
+package com.unlam.tp_integrador.service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.unlam.tpIntegrador.administrator.ManejadorStock;
-import com.unlam.tpIntegrador.entities.Producto;
+import com.unlam.tp_integrador.administrator.ManejadorStock;
+import com.unlam.tp_integrador.entities.Producto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

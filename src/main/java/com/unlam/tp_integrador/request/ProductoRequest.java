@@ -1,6 +1,6 @@
-package com.unlam.tpIntegrador.request;
+package com.unlam.tp_integrador.request;
 
-import com.unlam.tpIntegrador.entities.Producto;
+import com.unlam.tp_integrador.entities.Producto;
 import lombok.Getter;
 import lombok.Setter;
 

@@ -1,10 +1,10 @@
-package com.unlam.tpIntegrador.controller;
+package com.unlam.tp_integrador.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 
-import com.unlam.tpIntegrador.entities.Producto;
-import com.unlam.tpIntegrador.request.ProductoRequest;
-import com.unlam.tpIntegrador.service.GestorProductoService;
+import com.unlam.tp_integrador.entities.Producto;
+import com.unlam.tp_integrador.request.ProductoRequest;
+import com.unlam.tp_integrador.service.GestorProductoService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;

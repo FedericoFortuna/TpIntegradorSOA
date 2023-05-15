@@ -1,4 +1,4 @@
-package com.unlam.tpIntegrador.entities;
+package com.unlam.tp_integrador.entities;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;

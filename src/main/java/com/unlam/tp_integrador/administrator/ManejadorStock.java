@@ -1,6 +1,8 @@
-package com.unlam.tpIntegrador.administrator;
+package com.unlam.tp_integrador.administrator;
 
-import com.unlam.tpIntegrador.entities.Producto;
+import com.unlam.tp_integrador.entities.Producto;
+import com.unlam.tp_integrador.exceptions.ProductoNotFoundException;
+import com.unlam.tp_integrador.exceptions.SinStockException;
 import lombok.Getter;
 import org.springframework.stereotype.Component;
 
@@ -12,14 +14,18 @@ import java.util.Objects;
 @Component
 @Getter
 public class ManejadorStock {
-    private Map<Producto, Integer> stockProductos = new HashMap() {{
-        put(Producto.builder().id("1").desc("Yerba").precio(800).build(), 10);
-        put(Producto.builder().id("2").desc("Azucar").precio(250).build(), 25);
-        put(Producto.builder().id("3").desc("Sal").precio(175).build(), 200);
-        put(Producto.builder().id("4").desc("Lavandina").precio(350).build(), 15);
-        put(Producto.builder().id("5").desc("Papel de cocina").precio(600).build(), 48);
-        put(Producto.builder().id("6").desc("Oregano").precio(20).build(), 300);
-    }};
+    private final Map<Producto, Integer> stockProductos = new HashMap<>();
+    private final String MSG_EX = "Id de producto inexistente";
+
+    public ManejadorStock() {
+        stockProductos.put(Producto.builder().id("1").desc("Yerba").precio(800).build(), 10);
+        stockProductos.put(Producto.builder().id("2").desc("Azucar").precio(250).build(), 25);
+        stockProductos.put(Producto.builder().id("3").desc("Sal").precio(175).build(), 200);
+        stockProductos.put(Producto.builder().id("4").desc("Lavandina").precio(350).build(), 15);
+        stockProductos.put(Producto.builder().id("5").desc("Papel de cocina").precio(600).build(), 48);
+        stockProductos.put(Producto.builder().id("6").desc("Oregano").precio(20).build(), 300);
+    }
+
 
     public void saveProducto(Producto producto, Integer cantidad) {
         boolean existe = false;
@@ -53,12 +59,15 @@ public class ManejadorStock {
                 existe = true;
             }
         }
-        if(existe && cantidad < cantidadProducto){
+
+        if (!existe) {
+            throw new ProductoNotFoundException(MSG_EX);
+        } else if (cantidad > cantidadProducto) {
+            throw new SinStockException();
+        } else if (cantidad < cantidadProducto) {
             stockProductos.replace(producto, cantidadProducto, cantidadProducto - cantidad);
-        } else if (existe && cantidad == cantidadProducto){
-            stockProductos.remove(producto);
         } else {
-            //exception
+            stockProductos.remove(producto);
         }
     }
 }

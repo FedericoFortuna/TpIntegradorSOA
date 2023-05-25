@@ -1,5 +1,8 @@
 package com.unlam.tp_integrador.threads;
 
+import com.unlam.tp_integrador.communication.Message;
+import com.unlam.tp_integrador.communication.MessageProducer;
+import com.unlam.tp_integrador.communication.MessageQueue;
 import com.unlam.tp_integrador.dto.TareaDTO;
 import com.unlam.tp_integrador.entities.TareaEntity;
 import com.unlam.tp_integrador.enums.StatusTarea;
@@ -10,6 +13,7 @@ import com.unlam.tp_integrador.processor.ProcesadorTarea;
 import com.unlam.tp_integrador.repositories.TareaRepository;
 import com.unlam.tp_integrador.strategy.process.CalculationStrategy;
 import com.unlam.tp_integrador.strategy.process.TextTransformStrategy;
+import org.springframework.beans.factory.annotation.Autowired;
 
 
 import java.util.Optional;
@@ -20,6 +24,9 @@ public class ExecutorThread extends Thread {
     private TareaDTO tareaDTO;
     private ProcesadorTarea procesadorTarea;
     private TareaRepository tareaRepository;
+
+    @Autowired
+    private MessageProducer mp;
 
 
     public ExecutorThread(TareaDTO tareaDTO, ProcesadorTarea procesadorTarea, TareaRepository tareaRepository) {
@@ -47,7 +54,13 @@ public class ExecutorThread extends Thread {
         }
 
 
-        tareaDTO.setStatusTarea(StatusTarea.COMPLETADA);
+        tareaDTO.setStatusTarea(StatusTarea.EN_PROGRESO);
         tareaRepository.save(MapperTarea.toEntity(tareaDTO));
+
+        mp.sendMessage(Message.builder()
+                .requestId(tareaDTO.getId())
+                .resultado(tareaDTO.getResultado())
+                .build());
+
     }
 }

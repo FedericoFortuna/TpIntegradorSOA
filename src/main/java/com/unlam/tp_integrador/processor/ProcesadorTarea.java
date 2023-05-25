@@ -1,7 +1,7 @@
 package com.unlam.tp_integrador.processor;
 
 import com.unlam.tp_integrador.dto.TareaDTO;
-import com.unlam.tp_integrador.strategy.ProcesamientoStrategy;
+import com.unlam.tp_integrador.strategy.process.ProcesamientoStrategy;
 import lombok.Getter;
 import org.springframework.stereotype.Component;
 

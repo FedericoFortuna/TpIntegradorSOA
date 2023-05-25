@@ -3,6 +3,7 @@ package com.unlam.tp_integrador.mapper;
 import com.unlam.tp_integrador.dto.TareaDTO;
 import com.unlam.tp_integrador.entities.TareaEntity;
 import com.unlam.tp_integrador.enums.StatusTarea;
+import com.unlam.tp_integrador.enums.TipoTarea;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -12,9 +13,9 @@ public class MapperTarea {
     public static TareaEntity newTarea(TareaDTO tareaDTO, String id){
         return TareaEntity.builder()
                 .id(id)
-                .result("")
-                .taskType(tareaDTO.getTipoTarea())
-                .status(StatusTarea.PENDIENTE)
+                .resultado("")
+                .taskType(tareaDTO.getTipoTarea().toString())
+                .status(StatusTarea.PENDIENTE.toString())
                 .detalleTarea(tareaDTO.detalleTareaToString())
                 .build();
     }
@@ -22,10 +23,20 @@ public class MapperTarea {
     public static TareaEntity toEntity(TareaDTO tareaDTO){
         return TareaEntity.builder()
                 .id(tareaDTO.getId())
-                .result("")
-                .taskType(tareaDTO.getTipoTarea())
-                .status(StatusTarea.COMPLETADA)
+                .resultado("")
+                .taskType(tareaDTO.getTipoTarea().toString())
+                .status(StatusTarea.COMPLETADA.toString())
                 .detalleTarea(tareaDTO.detalleTareaToString())
+                .build();
+    }
+
+    public static TareaDTO toDTO(TareaEntity tareaEntity){
+        return TareaDTO.builder()
+                .id(tareaEntity.getId())
+                .tipoTarea(TipoTarea.valueOf(tareaEntity.getTaskType()))
+                .resultado(tareaEntity.getResultado())
+                .statusTarea(StatusTarea.valueOf(tareaEntity.getStatus()))
+                .detalleTarea(tareaEntity.detalleTareaToMap())
                 .build();
     }
 

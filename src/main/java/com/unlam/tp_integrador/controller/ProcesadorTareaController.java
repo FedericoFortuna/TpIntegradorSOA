@@ -22,9 +22,9 @@ public class ProcesadorTareaController {
                     @ApiResponse(responseCode = "500", description = "Error Ineserado")})
     @PostMapping(value = "/task")
     public ResponseEntity<String> postTask(@RequestBody TareaDTO tareaDTO){
-        String idTarea = procesadorTareaService.crearTarea(tareaDTO);
-
-        return new ResponseEntity<>(idTarea, HttpStatus.OK);
+        tareaDTO = procesadorTareaService.crearTarea(tareaDTO);
+        procesadorTareaService.procesarTareaAsync(tareaDTO);
+        return new ResponseEntity<>(tareaDTO.getId(), HttpStatus.OK);
     }
 
 

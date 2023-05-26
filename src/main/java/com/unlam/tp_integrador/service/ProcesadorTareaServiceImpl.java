@@ -14,14 +14,11 @@ import java.io.PipedOutputStream;
 @Service
 public class ProcesadorTareaServiceImpl implements IProcesadorTareaService {
 
-    private PipedInputStream pipedInputStream;
-    private PipedOutputStream pipedOutputStream;
-
     @Autowired
     private TareaRepository tareaRepository;
 
     @Autowired
-    ProcesadorTarea procesadorTarea;
+    private ProcesadorTarea procesadorTarea;
 
     @Override
     public TareaDTO crearTarea(TareaDTO tareaDTO) {

@@ -5,6 +5,8 @@ import com.unlam.tp_integrador.tools.LoggingTag;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 
@@ -13,6 +15,7 @@ import java.time.LocalDateTime;
 public class MessageQueueConfig {
     private final String CREATING_MQ = "{} - Creando cola de mensajes: {} - {}";
     @Bean
+    @Scope("singleton")
     public MessageQueue messageQueue() {
 
         log.info(CREATING_MQ, LoggingTag.CONFIGURATION, LocalDateTime.now().withNano(0), MessageQueueConfig.class.getSimpleName());

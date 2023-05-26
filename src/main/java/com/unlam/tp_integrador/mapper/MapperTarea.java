@@ -33,7 +33,7 @@ public class MapperTarea {
                 .id(tareaDTO.getId())
                 .resultado("")
                 .taskType(tareaDTO.getTipoTarea().toString())
-                .status(StatusTarea.COMPLETADA.toString())
+                .status(tareaDTO.getStatusTarea().toString())
                 .detalleTarea(tareaDTO.detalleTareaToString())
                 .build();
     }

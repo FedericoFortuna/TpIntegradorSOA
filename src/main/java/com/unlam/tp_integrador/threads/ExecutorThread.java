@@ -13,13 +13,19 @@ import com.unlam.tp_integrador.processor.ProcesadorTarea;
 import com.unlam.tp_integrador.repositories.TareaRepository;
 import com.unlam.tp_integrador.strategy.process.CalculationStrategy;
 import com.unlam.tp_integrador.strategy.process.TextTransformStrategy;
+import com.unlam.tp_integrador.tools.LoggingTag;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 
 
+import java.time.LocalDateTime;
 import java.util.Optional;
 
-
+@Slf4j
 public class ExecutorThread extends Thread {
+
+    private final String EXECUTION_THREAD = "{} - Inicio ejecucion hilo: {} - {} - {}";
+    private final String SEND_MESSAGE = "{} - Hilo: {} enviando mensaje - {} - {}";
 
     private TareaDTO tareaDTO;
     private ProcesadorTarea procesadorTarea;
@@ -28,18 +34,23 @@ public class ExecutorThread extends Thread {
     @Autowired
     private MessageProducer mp;
 
+    @Autowired
+    public MessageQueue mq;
+
 
     public ExecutorThread(TareaDTO tareaDTO, ProcesadorTarea procesadorTarea, TareaRepository tareaRepository) {
         this.tareaDTO = tareaDTO;
         this.procesadorTarea = procesadorTarea;
         this.tareaRepository = tareaRepository;
+        this.mp = new MessageProducer();
     }
 
 
     @Override
     public void run() {
         try {
-            Thread.sleep(5000);
+            log.info(EXECUTION_THREAD, LoggingTag.THREAD, Thread.currentThread().getName(), LocalDateTime.now().withNano(0), ExecutorThread.class.getSimpleName());
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
@@ -63,6 +74,7 @@ public class ExecutorThread extends Thread {
         tareaDTO.setStatusTarea(StatusTarea.EN_PROGRESO);
         tareaRepository.save(MapperTarea.toEntity(tareaDTO));
 
+        log.info(SEND_MESSAGE, LoggingTag.THREAD, Thread.currentThread().getName(), LocalDateTime.now().withNano(0), ExecutorThread.class.getSimpleName());
         mp.sendMessage(Message.builder()
                 .requestId(tareaDTO.getId())
                 .resultado(tareaDTO.getResultado())

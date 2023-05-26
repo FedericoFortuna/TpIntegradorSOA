@@ -5,7 +5,7 @@ public class LoggingTag {
     public static final String MESSAGE_CONSUMER = "[MESSAGE_CONSUMER]";
     public static final String MESSAGE_PRODUCER = "[MESSAGE_PRODUCER]";
     public static final String CONTROLLER = "[CONTROLLER]";
-
+    public static final String THREAD = "[THREAD_EXECUTOR]";
     public static final String MAPPER = "[MAPPER]";
     public static final String CONFIGURATION = "[CONFIGURATION]";
 }

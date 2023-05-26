@@ -2,15 +2,22 @@ package com.unlam.tp_integrador.controller;
 
 import com.unlam.tp_integrador.dto.TareaDTO;
 import com.unlam.tp_integrador.service.IProcesadorTareaService;
+import com.unlam.tp_integrador.tools.LoggingTag;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDateTime;
+
 @RestController
+@Slf4j
 public class ProcesadorTareaController {
+
+    public final String POST_TASK_ENDPOINT = "{} - Recibido: {} - {}";
 
     @Autowired
     private IProcesadorTareaService procesadorTareaService;
@@ -22,6 +29,7 @@ public class ProcesadorTareaController {
                     @ApiResponse(responseCode = "500", description = "Error Ineserado")})
     @PostMapping(value = "/task")
     public ResponseEntity<String> postTask(@RequestBody TareaDTO tareaDTO){
+        log.info(POST_TASK_ENDPOINT, LoggingTag.CONTROLLER, LocalDateTime.now(), ProcesadorTareaController.class.getSimpleName());
         tareaDTO = procesadorTareaService.crearTarea(tareaDTO);
         procesadorTareaService.procesarTareaAsync(tareaDTO);
         return new ResponseEntity<>(tareaDTO.getId(), HttpStatus.OK);

@@ -15,10 +15,10 @@ public class MessageProducer {
     @Autowired
     private MessageQueue mq;
 
-    private final String SEND_MESSAGE = "{} - Envio: {} - enviando mensaje con id: {} - {}";
+    private final String SEND_MESSAGE = "{} - Envio: {} - enviando mensaje con id: {} - Hilo: {} - {}";
 
     public void sendMessage(Message message) {
-        log.info(SEND_MESSAGE, LoggingTag.MESSAGE_PRODUCER, LocalDateTime.now().withNano(0), message.getRequestId(), MessageProducer.class.getSimpleName());
+        log.info(SEND_MESSAGE, LoggingTag.MESSAGE_PRODUCER, LocalDateTime.now().withNano(0), message.getRequestId(), Thread.currentThread().getName(), MessageProducer.class.getSimpleName());
         mq.sendMessage(Message.builder()
                 .requestId(message.getRequestId())
                 .resultado(message.getResultado())

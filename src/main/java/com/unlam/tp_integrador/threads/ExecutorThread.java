@@ -30,9 +30,9 @@ public class ExecutorThread extends Thread {
     private final String TASK_FOUND = "{} - Tarea encontrada con id: {} - {} - {}";
     private final String INSERT_TASK_IN_PROGRESS = "{} - Guardando tarea con id: {} EN PROGRESO - {} - {}";
 
-    private TareaDTO tareaDTO;
-    private ProcesadorTarea procesadorTarea;
-    private TareaRepository tareaRepository;
+    private final TareaDTO tareaDTO;
+    private final ProcesadorTarea procesadorTarea;
+    private final TareaRepository tareaRepository;
 
     @Autowired
     private MessageProducer mp;

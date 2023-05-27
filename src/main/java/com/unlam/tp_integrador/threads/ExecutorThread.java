@@ -26,6 +26,9 @@ public class ExecutorThread extends Thread {
 
     private final String EXECUTION_THREAD = "{} - Inicio ejecucion hilo: {} - {} - {}";
     private final String SEND_MESSAGE = "{} - Hilo: {} enviando mensaje - {} - {}";
+    private final String LOOK_FOR_TASK = "{} - Buscando tarea con id: {} - {} - {}";
+    private final String TASK_FOUND = "{} - Tarea encontrada con id: {} - {} - {}";
+    private final String INSERT_TASK_IN_PROGRESS = "{} - Guardando tarea con id: {} EN PROGRESO - {} - {}";
 
     private TareaDTO tareaDTO;
     private ProcesadorTarea procesadorTarea;
@@ -33,9 +36,6 @@ public class ExecutorThread extends Thread {
 
     @Autowired
     private MessageProducer mp;
-
-    @Autowired
-    public MessageQueue mq;
 
 
     public ExecutorThread(TareaDTO tareaDTO, ProcesadorTarea procesadorTarea, TareaRepository tareaRepository) {
@@ -55,8 +55,9 @@ public class ExecutorThread extends Thread {
             throw new RuntimeException(e);
         }
 
+        log.info(LOOK_FOR_TASK, LoggingTag.THREAD, this.tareaDTO.getId(), LocalDateTime.now().withNano(0), Thread.currentThread().getName());
         Optional<TareaEntity> tareaEntity = tareaRepository.findById(this.tareaDTO.getId());
-
+        log.info(TASK_FOUND, LoggingTag.THREAD, this.tareaDTO.getId(), LocalDateTime.now().withNano(0), Thread.currentThread().getName());
         if (tareaEntity.isEmpty()) {
             throw new TareaNotFoundException();
         }
@@ -72,6 +73,7 @@ public class ExecutorThread extends Thread {
 
 
         tareaDTO.setStatusTarea(StatusTarea.EN_PROGRESO);
+        log.info(INSERT_TASK_IN_PROGRESS, LoggingTag.THREAD, this.tareaDTO.getId(), LocalDateTime.now().withNano(0), Thread.currentThread().getName());
         tareaRepository.save(MapperTarea.toEntity(tareaDTO));
 
         log.info(SEND_MESSAGE, LoggingTag.THREAD, Thread.currentThread().getName(), LocalDateTime.now().withNano(0), ExecutorThread.class.getSimpleName());

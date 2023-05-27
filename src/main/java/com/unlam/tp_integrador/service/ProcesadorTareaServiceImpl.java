@@ -8,8 +8,6 @@ import com.unlam.tp_integrador.threads.ExecutorThread;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.io.PipedInputStream;
-import java.io.PipedOutputStream;
 
 @Service
 public class ProcesadorTareaServiceImpl implements IProcesadorTareaService {

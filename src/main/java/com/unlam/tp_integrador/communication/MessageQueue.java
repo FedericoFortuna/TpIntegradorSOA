@@ -1,19 +1,38 @@
 package com.unlam.tp_integrador.communication;
 
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-import org.springframework.stereotype.Component;
+import com.unlam.tp_integrador.tools.LoggingTag;
+import lombok.Getter;
+import lombok.ToString;
+import lombok.extern.slf4j.Slf4j;
 
-import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
+@Getter
+@Slf4j
+@ToString
 public class MessageQueue {
-    //ConcurrentLinkedQueue --> usa CAS, https://www.baeldung.com/java-concurrent-queues
-    private Queue<Message> queue;
 
-    public MessageQueue(){
-        this.queue = new ConcurrentLinkedQueue<>();
+    //ConcurrentLinkedQueue --> usa CAS, https://www.baeldung.com/java-concurrent-queues
+    private static MessageQueue instance;
+    private ConcurrentLinkedQueue<Message> queue;
+
+    private static final String MQ_ALREADY_EXISTS = "{} - Cola de mensajes ya creado. Objeto {} - {}";
+    private static final String MQ_NOT_EXISTS = "{} - Cola de mensajes inexistente - {}";
+
+
+    private MessageQueue() {
+        queue = new ConcurrentLinkedQueue<>();
     }
+
+    public static synchronized MessageQueue getInstance() {
+        if (instance == null) {
+            log.info(MQ_NOT_EXISTS, LoggingTag.CONFIGURATION, MessageQueue.class.getSimpleName());
+            instance = new MessageQueue();
+        }
+        log.info(MQ_ALREADY_EXISTS, LoggingTag.CONFIGURATION, instance, MessageQueue.class.getSimpleName());
+        return instance;
+    }
+
 
     public void sendMessage(Message message) {
         queue.add(message);

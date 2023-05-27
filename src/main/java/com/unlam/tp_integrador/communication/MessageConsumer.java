@@ -19,8 +19,8 @@ public class MessageConsumer {
     private final String PROCESSING_MESSAGE = "{} - Inicio: {} - procesando mensaje con id: {} - {}";
     private final String QUEUE_WITH_MSG = "{} - COLA CON MENSAJES DENTRO. {} - {}";
 
-    @Autowired
-    private MessageQueue messageQueue;
+
+    private final MessageQueue messageQueue = MessageQueue.getInstance();
 
     @Autowired
     private ProcesadorMensaje procesadorMensaje;
@@ -29,12 +29,12 @@ public class MessageConsumer {
     public void consumeMessages() throws InterruptedException {
 
         while (true) {
-            Thread.sleep(5000);
+            Thread.sleep(500);
             if (messageQueue.hasMessages()) {
                 log.info(QUEUE_WITH_MSG, LoggingTag.MESSAGE_CONSUMER, LocalDateTime.now().withNano(0), MessageConsumer.class.getSimpleName());
                 Message message = messageQueue.receiveMessage();
                 log.info(PROCESSING_MESSAGE, LoggingTag.MESSAGE_CONSUMER, LocalDateTime.now().withNano(0), message.getRequestId(), MessageConsumer.class.getSimpleName());
-                // Procesar el mensaje y actualizar el estado en la base de datos
+
                 procesadorMensaje.procesarMensaje(message);
             }
         }

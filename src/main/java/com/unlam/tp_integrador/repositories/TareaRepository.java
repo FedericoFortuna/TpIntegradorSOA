@@ -5,11 +5,13 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 @Repository
 public interface TareaRepository extends JpaRepository<TareaEntity, String> {
 
     @Modifying
     @Query("UPDATE TareaEntity t SET t.status = :estado, t.resultado = :resultado WHERE t.id = :id")
+    @Transactional
     void actualizarEstadoYResultadoPorId(String id, String estado, String resultado);
 }

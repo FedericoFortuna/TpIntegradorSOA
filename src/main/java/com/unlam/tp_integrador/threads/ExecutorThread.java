@@ -50,7 +50,7 @@ public class ExecutorThread extends Thread {
     public void run() {
         try {
             log.info(EXECUTION_THREAD, LoggingTag.THREAD, Thread.currentThread().getName(), LocalDateTime.now().withNano(0), ExecutorThread.class.getSimpleName());
-            Thread.sleep(1000);
+            Thread.sleep(15000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }

@@ -15,7 +15,7 @@ public class ProcesadorMensaje {
     private TareaRepository tareaRepository;
 
 
-    public void procesarMensaje(Message message){
+    public synchronized void procesarMensaje(Message message){
         tareaRepository.actualizarEstadoYResultadoPorId(
                 message.getRequestId(),
                 StatusTarea.COMPLETADA.toString(),

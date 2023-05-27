@@ -6,7 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
+
 
 import java.time.LocalDateTime;
 
@@ -19,7 +19,7 @@ public class MessageQueueConfig {
     public MessageQueue messageQueue() {
 
         log.info(CREATING_MQ, LoggingTag.CONFIGURATION, LocalDateTime.now().withNano(0), MessageQueueConfig.class.getSimpleName());
-        return new MessageQueue();
+        return MessageQueue.getInstance();
     }
 
 }

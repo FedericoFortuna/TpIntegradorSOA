@@ -18,6 +18,7 @@ public class MessageQueue {
 
     private static final String MQ_ALREADY_EXISTS = "{} - Cola de mensajes ya creado. Objeto {} - {}";
     private static final String MQ_NOT_EXISTS = "{} - Cola de mensajes inexistente - {}";
+    private static final String MQ_ADD_MSG = "{} - Agregando mensaje con id: {} - {}";
 
 
     private MessageQueue() {
@@ -35,6 +36,7 @@ public class MessageQueue {
 
 
     public void sendMessage(Message message) {
+        log.info(MQ_ADD_MSG, LoggingTag.MQ, message.getRequestId(), MessageQueue.class.getSimpleName());
         queue.add(message);
     }
 

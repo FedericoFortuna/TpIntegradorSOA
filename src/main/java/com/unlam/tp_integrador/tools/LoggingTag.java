@@ -6,6 +6,7 @@ public class LoggingTag {
     public static final String MESSAGE_PRODUCER = "[MESSAGE_PRODUCER]";
     public static final String CONTROLLER = "[CONTROLLER]";
     public static final String THREAD = "[THREAD_EXECUTOR]";
+    public static final String MQ = "[MESSAGE_QUEUE]";
     public static final String MAPPER = "[MAPPER]";
     public static final String CONFIGURATION = "[CONFIGURATION]";
 }

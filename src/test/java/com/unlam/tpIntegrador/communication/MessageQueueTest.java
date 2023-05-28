@@ -1,4 +1,4 @@
-package communication;
+package com.unlam.tpIntegrador.communication;
 
 import com.unlam.tp_integrador.communication.Message;
 import com.unlam.tp_integrador.communication.MessageQueue;

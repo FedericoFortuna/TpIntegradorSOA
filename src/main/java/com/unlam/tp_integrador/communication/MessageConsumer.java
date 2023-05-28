@@ -28,7 +28,7 @@ public class MessageConsumer {
     @Async
     public void consumeMessages() throws InterruptedException {
 
-        while (true) {
+        while (!Thread.currentThread().isInterrupted()) {
             Thread.sleep(500);
             if (messageQueue.hasMessages()) {
                 log.info(QUEUE_WITH_MSG, LoggingTag.MESSAGE_CONSUMER, LocalDateTime.now().withNano(0), MessageConsumer.class.getSimpleName());
@@ -37,6 +37,14 @@ public class MessageConsumer {
 
                 procesadorMensaje.procesarMensaje(message);
             }
+            if (isInterrupted()) {
+                break;
+            }
         }
     }
+
+    public static boolean isInterrupted(){
+        return Thread.interrupted();
+    }
+
 }

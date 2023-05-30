@@ -29,6 +29,7 @@ public class ExecutorThread extends Thread {
     private final String LOOK_FOR_TASK = "{} - Buscando tarea con id: {} - {} - {}";
     private final String TASK_FOUND = "{} - Tarea encontrada con id: {} - {} - {}";
     private final String INSERT_TASK_IN_PROGRESS = "{} - Guardando tarea con id: {} EN PROGRESO - {} - {}";
+    private final String TASK_NOT_FOUND = "{} - Tarea no encontrada - {} - {}";
 
     private final TareaDTO tareaDTO;
     private final ProcesadorTarea procesadorTarea;
@@ -57,11 +58,12 @@ public class ExecutorThread extends Thread {
 
         log.info(LOOK_FOR_TASK, LoggingTag.THREAD, this.tareaDTO.getId(), LocalDateTime.now().withNano(0), Thread.currentThread().getName());
         Optional<TareaEntity> tareaEntity = tareaRepository.findById(this.tareaDTO.getId());
-        log.info(TASK_FOUND, LoggingTag.THREAD, this.tareaDTO.getId(), LocalDateTime.now().withNano(0), Thread.currentThread().getName());
+
         if (tareaEntity.isEmpty()) {
+            log.info(TASK_NOT_FOUND, LoggingTag.THREAD, LocalDateTime.now().withNano(0), ExecutorThread.class.getSimpleName());
             throw new TareaNotFoundException();
         }
-
+        log.info(TASK_FOUND, LoggingTag.THREAD, this.tareaDTO.getId(), LocalDateTime.now().withNano(0), Thread.currentThread().getName());
         TareaDTO tareaDTO = MapperTarea.toDTO(tareaEntity.get());
         TipoTarea tipoTarea = TipoTarea.valueOf(tareaDTO.getTipoTarea().toString());
 

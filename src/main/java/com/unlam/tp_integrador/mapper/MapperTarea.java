@@ -4,6 +4,7 @@ import com.unlam.tp_integrador.dto.TareaDTO;
 import com.unlam.tp_integrador.entities.TareaEntity;
 import com.unlam.tp_integrador.enums.StatusTarea;
 import com.unlam.tp_integrador.enums.TipoTarea;
+import com.unlam.tp_integrador.response.TareaResponse;
 import com.unlam.tp_integrador.tools.LoggingTag;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -47,5 +48,15 @@ public class MapperTarea {
                 .detalleTarea(tareaEntity.detalleTareaToMap())
                 .build();
     }
+
+    public static TareaResponse toResponse(TareaEntity tareaEntity){
+        return TareaResponse.builder()
+                .id(tareaEntity.getId())
+                .resultado(tareaEntity.getResultado())
+                .build();
+    }
+
+
+
 
 }

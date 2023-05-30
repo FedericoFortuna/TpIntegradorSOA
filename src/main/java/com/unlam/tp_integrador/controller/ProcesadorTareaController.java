@@ -18,6 +18,7 @@ import java.time.LocalDateTime;
 public class ProcesadorTareaController {
 
     public final String POST_TASK_ENDPOINT = "{} - Recibido: {} - {}";
+    public final String GET_TASK_ENDPOINT = "{} - Obteniendo info para id: {} - {} - {}";
 
     @Autowired
     private IProcesadorTareaService procesadorTareaService;
@@ -33,6 +34,13 @@ public class ProcesadorTareaController {
         tareaDTO = procesadorTareaService.crearTarea(tareaDTO);
         procesadorTareaService.procesarTareaAsync(tareaDTO);
         return new ResponseEntity<>(tareaDTO.getId(), HttpStatus.OK);
+    }
+
+
+    @GetMapping(value = "/task/{idTask}")
+    public ResponseEntity<String> getTask(@PathVariable String idTask){
+        log.info(GET_TASK_ENDPOINT, LoggingTag.CONTROLLER, idTask, LocalDateTime.now(), ProcesadorTareaController.class.getSimpleName());
+        return new ResponseEntity<>(procesadorTareaService.obtenerResultado(idTask), HttpStatus.OK);
     }
 
 

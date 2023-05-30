@@ -36,7 +36,10 @@ public class ProcesadorTareaController {
         return new ResponseEntity<>(tareaDTO.getId(), HttpStatus.OK);
     }
 
-
+    @Operation(summary = "Obtener resultados",
+            responses = {
+                    @ApiResponse(responseCode = "200", description = "OK"),
+                    @ApiResponse(responseCode = "500", description = "Error Ineserado")})
     @GetMapping(value = "/task/{idTask}")
     public ResponseEntity<String> getTask(@PathVariable String idTask){
         log.info(GET_TASK_ENDPOINT, LoggingTag.CONTROLLER, idTask, LocalDateTime.now(), ProcesadorTareaController.class.getSimpleName());

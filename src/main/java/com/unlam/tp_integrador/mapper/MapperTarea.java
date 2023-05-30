@@ -16,6 +16,9 @@ import java.time.LocalDateTime;
 public class MapperTarea {
 
     private static final String NEW_TAREA = "{} - Creando nueva tarea para el id: {} - {} - {}";
+    private static final String TO_ENTITY = "{} - Mappeando TareaDto a TareaEntity para tarea con el id: {} - {} - {}";
+    private static final String TO_DTO = "{} - Mappeando TareaEntity a TareaDto para tarea con el id: {} - {} - {}";
+    private static final String TO_RESPONSE = "{} - Mappeando TareaEntity a TareaResponse para tarea con el id: {} - {} - {}";
 
 
     public static TareaEntity newTarea(TareaDTO tareaDTO, String id){
@@ -30,6 +33,7 @@ public class MapperTarea {
     }
 
     public static TareaEntity toEntity(TareaDTO tareaDTO){
+        log.debug(TO_ENTITY, LoggingTag.MAPPER, tareaDTO.getId(), LocalDateTime.now().withNano(0), MapperTarea.class.getSimpleName());
         return TareaEntity.builder()
                 .id(tareaDTO.getId())
                 .resultado("")
@@ -40,6 +44,7 @@ public class MapperTarea {
     }
 
     public static TareaDTO toDTO(TareaEntity tareaEntity){
+        log.debug(TO_DTO, LoggingTag.MAPPER, tareaEntity.getId(), LocalDateTime.now().withNano(0), MapperTarea.class.getSimpleName());
         return TareaDTO.builder()
                 .id(tareaEntity.getId())
                 .tipoTarea(TipoTarea.valueOf(tareaEntity.getTaskType()))
@@ -50,6 +55,7 @@ public class MapperTarea {
     }
 
     public static TareaResponse toResponse(TareaEntity tareaEntity){
+        log.debug(TO_RESPONSE, LoggingTag.MAPPER, tareaEntity.getId(), LocalDateTime.now().withNano(0), MapperTarea.class.getSimpleName());
         return TareaResponse.builder()
                 .id(tareaEntity.getId())
                 .resultado(tareaEntity.getResultado())

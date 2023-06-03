@@ -48,4 +48,11 @@ public class HasherStrategy implements ProcesamientoStrategy {
             throw new RuntimeException(e);
         }
     }
+
+    /*
+    *     public static boolean verifyPassword(String password, String hashedPassword) {
+        String hashedInput = hashPassword(password);
+        return hashedInput != null && hashedInput.equals(hashedPassword);
+    }*/
+
 }

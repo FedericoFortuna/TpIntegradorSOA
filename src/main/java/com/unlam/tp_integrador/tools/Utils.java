@@ -6,6 +6,11 @@ import java.util.Collection;
 
 public class Utils {
 
+    public static final String UTF_8 = "UTF-8";
+    public static final String PNG = "PNG";
+
+    public static final String SHA_256 = "SHA-256";
+
     public static ArrayList<Integer> objectToArray(Object obj) {
         ArrayList<Integer> arrayList = new ArrayList<>();
 

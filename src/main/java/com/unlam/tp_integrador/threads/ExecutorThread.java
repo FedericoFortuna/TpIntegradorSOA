@@ -2,7 +2,6 @@ package com.unlam.tp_integrador.threads;
 
 import com.unlam.tp_integrador.communication.Message;
 import com.unlam.tp_integrador.communication.MessageProducer;
-import com.unlam.tp_integrador.communication.MessageQueue;
 import com.unlam.tp_integrador.dto.TareaDTO;
 import com.unlam.tp_integrador.entities.TareaEntity;
 import com.unlam.tp_integrador.enums.StatusTarea;
@@ -12,6 +11,7 @@ import com.unlam.tp_integrador.mapper.MapperTarea;
 import com.unlam.tp_integrador.processor.ProcesadorTarea;
 import com.unlam.tp_integrador.repositories.TareaRepository;
 import com.unlam.tp_integrador.strategy.process.CalculationStrategy;
+import com.unlam.tp_integrador.strategy.process.HasherStrategy;
 import com.unlam.tp_integrador.strategy.process.TextTransformStrategy;
 import com.unlam.tp_integrador.tools.LoggingTag;
 import lombok.extern.slf4j.Slf4j;
@@ -71,6 +71,8 @@ public class ExecutorThread extends Thread {
             procesadorTarea.procesarTarea(tareaDTO, new CalculationStrategy());
         } else if (tipoTarea.equals(TipoTarea.TEXT_TRANSFORM)) {
             procesadorTarea.procesarTarea(tareaDTO, new TextTransformStrategy());
+        } else if (tipoTarea.equals(TipoTarea.HASH_PW)){
+            procesadorTarea.procesarTarea(tareaDTO, new HasherStrategy());
         }
 
 

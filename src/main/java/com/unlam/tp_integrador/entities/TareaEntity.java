@@ -34,7 +34,7 @@ public class TareaEntity {
     @Column(nullable = false, length = 25)
     private String status;
 
-    @Column(length = 100)
+    @Column(length = 700)
     private String resultado;
 
 

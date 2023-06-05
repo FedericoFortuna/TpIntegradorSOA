@@ -72,14 +72,14 @@ public class ExecutorThread extends Thread {
 
         log.info(TASK_FOUND, LoggingTag.THREAD, this.tareaDTO.getId(), LocalDateTime.now().withNano(0), Thread.currentThread().getName());
 
-        TareaDTO tareaDTO = MapperTarea.toDTO(tareaEntity.get());
-        TipoTarea tipoTarea = TipoTarea.valueOf(tareaDTO.getTipoTarea().toString());
+        TareaDTO tareaFounded = MapperTarea.toDTO(tareaEntity.get());
+        TipoTarea tipoTarea = TipoTarea.valueOf(tareaFounded.getTipoTarea().toString());
 
-        process(tareaDTO, tipoTarea);
+        process(tareaFounded, tipoTarea);
 
         saveNewStatus();
 
-        sendMessage(tareaDTO);
+        sendMessage(tareaFounded);
 
     }
 

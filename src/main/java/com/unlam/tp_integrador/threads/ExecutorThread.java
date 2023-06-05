@@ -41,7 +41,7 @@ public class ExecutorThread extends Thread {
     private final TareaRepository tareaRepository;
 
     @Autowired
-    private MessageProducer mp;
+    private final MessageProducer mp;
 
 
     public ExecutorThread(TareaDTO tareaDTO, ProcesadorTarea procesadorTarea, TareaRepository tareaRepository) {

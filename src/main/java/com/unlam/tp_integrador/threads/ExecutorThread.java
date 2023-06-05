@@ -32,6 +32,9 @@ public class ExecutorThread extends Thread {
     private final String INSERT_TASK_IN_PROGRESS = "{} - Guardando tarea con id: {} EN PROGRESO - {} - {}";
     private final String TASK_NOT_FOUND = "{} - Tarea no encontrada - {} - {}";
     private final String ERROR = "{} - Error en sleep thread - {} - {}";
+    private final String CALCULATION_TASK = "{} - Hilo: {} - para tarea de tipo {} - {} - {}";
+    private final String TEXT_TRANSFORM_TASK = "{} - Hilo: {} - para tarea de tipo {} - {} - {}";
+    private final String HASH_PW_TASK = "{} - Hilo: {} - para tarea de tipo {} - {} - {}";
 
     private final TareaDTO tareaDTO;
     private final ProcesadorTarea procesadorTarea;
@@ -66,10 +69,22 @@ public class ExecutorThread extends Thread {
             log.info(TASK_NOT_FOUND, LoggingTag.THREAD, LocalDateTime.now().withNano(0), ExecutorThread.class.getSimpleName());
             throw new TareaNotFoundException();
         }
+
         log.info(TASK_FOUND, LoggingTag.THREAD, this.tareaDTO.getId(), LocalDateTime.now().withNano(0), Thread.currentThread().getName());
+
         TareaDTO tareaDTO = MapperTarea.toDTO(tareaEntity.get());
         TipoTarea tipoTarea = TipoTarea.valueOf(tareaDTO.getTipoTarea().toString());
 
+        process(tareaDTO, tipoTarea);
+
+        saveNewStatus();
+
+        sendMessage(tareaDTO);
+
+    }
+
+
+    private void process(TareaDTO tareaDTO, TipoTarea tipoTarea){
         if (tipoTarea.equals(TipoTarea.CALCULATION)) {
             procesadorTarea.procesarTarea(tareaDTO, new CalculationStrategy());
         } else if (tipoTarea.equals(TipoTarea.TEXT_TRANSFORM)) {
@@ -77,17 +92,20 @@ public class ExecutorThread extends Thread {
         } else if (tipoTarea.equals(TipoTarea.HASH_PW)){
             procesadorTarea.procesarTarea(tareaDTO, new HasherStrategy());
         }
+    }
 
-
-        tareaDTO.setStatusTarea(StatusTarea.EN_PROGRESO);
-        log.info(INSERT_TASK_IN_PROGRESS, LoggingTag.THREAD, this.tareaDTO.getId(), LocalDateTime.now().withNano(0), Thread.currentThread().getName());
-        tareaRepository.save(MapperTarea.toEntity(tareaDTO));
-
+    private void sendMessage(TareaDTO tareaDTO){
         log.info(SEND_MESSAGE, LoggingTag.THREAD, Thread.currentThread().getName(), LocalDateTime.now().withNano(0), ExecutorThread.class.getSimpleName());
         mp.sendMessage(Message.builder()
                 .requestId(tareaDTO.getId())
                 .resultado(tareaDTO.getResultado())
                 .build());
-
     }
+
+    private void saveNewStatus(){
+        tareaDTO.setStatusTarea(StatusTarea.EN_PROGRESO);
+        log.info(INSERT_TASK_IN_PROGRESS, LoggingTag.THREAD, this.tareaDTO.getId(), LocalDateTime.now().withNano(0), Thread.currentThread().getName());
+        tareaRepository.save(MapperTarea.toEntity(tareaDTO));
+    }
+
 }

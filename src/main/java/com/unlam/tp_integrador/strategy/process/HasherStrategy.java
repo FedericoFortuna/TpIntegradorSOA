@@ -41,18 +41,9 @@ public class HasherStrategy implements ProcesamientoStrategy {
             byte[] hashedBytes = digest.digest(passwordBytes);
 
             // Codificar el hash en Base64 para su almacenamiento
-            String hashedPassword = Base64.getEncoder().encodeToString(hashedBytes);
-
-            return hashedPassword;
+            return Base64.getEncoder().encodeToString(hashedBytes);
         } catch (NoSuchAlgorithmException e) {
             throw new RuntimeException(e);
         }
     }
-
-    /*
-    *     public static boolean verifyPassword(String password, String hashedPassword) {
-        String hashedInput = hashPassword(password);
-        return hashedInput != null && hashedInput.equals(hashedPassword);
-    }*/
-
 }

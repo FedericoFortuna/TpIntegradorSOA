@@ -10,6 +10,7 @@ public class HandlerEx {
 
     private final String TAREA_NOT_FOUND_MSG = "No se encontro una tarea con ese id";
     private final String UNEXPECTED_MSG = "Error inesperado en el sistema";
+    private final String HASH_ERROR_MSG = "Error en el hasheo de password";
 
     @ExceptionHandler(TareaNotFoundException.class)
     public ResponseEntity<String> tareaNotFoundEx(TareaNotFoundException ex) {
@@ -26,5 +27,13 @@ public class HandlerEx {
         // Por ejemplo, puedes registrarla en un archivo de log o realizar alguna operación específica
 
         return new ResponseEntity<>(UNEXPECTED_MSG, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
+    @ExceptionHandler(HashErrorException.class)
+    public ResponseEntity<String> unexpectedEx(HashErrorException ex) {
+        // Aquí puedes realizar cualquier lógica personalizada para manejar la excepción
+        // Por ejemplo, puedes registrarla en un archivo de log o realizar alguna operación específica
+
+        return new ResponseEntity<>(HASH_ERROR_MSG, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 }

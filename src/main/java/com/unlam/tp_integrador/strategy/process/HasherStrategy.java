@@ -8,6 +8,7 @@ import com.google.zxing.common.BitMatrix;
 import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
 import com.itextpdf.text.pdf.qrcode.EncodeHintType;
 import com.unlam.tp_integrador.dto.TareaDTO;
+import com.unlam.tp_integrador.exceptions.HashErrorException;
 import com.unlam.tp_integrador.tools.Utils;
 
 import java.io.ByteArrayOutputStream;
@@ -43,7 +44,7 @@ public class HasherStrategy implements ProcesamientoStrategy {
             // Codificar el hash en Base64 para su almacenamiento
             return Base64.getEncoder().encodeToString(hashedBytes);
         } catch (NoSuchAlgorithmException e) {
-            throw new RuntimeException(e);
+            throw new HashErrorException();
         }
     }
 }

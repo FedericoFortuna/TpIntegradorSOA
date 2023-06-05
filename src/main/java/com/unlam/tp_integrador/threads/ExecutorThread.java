@@ -86,10 +86,13 @@ public class ExecutorThread extends Thread {
 
     private void process(TareaDTO tareaDTO, TipoTarea tipoTarea){
         if (tipoTarea.equals(TipoTarea.CALCULATION)) {
+            log.info(CALCULATION_TASK, LoggingTag.THREAD, Thread.currentThread().getName(), tipoTarea,LocalDateTime.now().withNano(0), ExecutorThread.class.getSimpleName());
             procesadorTarea.procesarTarea(tareaDTO, new CalculationStrategy());
         } else if (tipoTarea.equals(TipoTarea.TEXT_TRANSFORM)) {
+            log.info(TEXT_TRANSFORM_TASK, LoggingTag.THREAD, Thread.currentThread().getName(), tipoTarea,LocalDateTime.now().withNano(0), ExecutorThread.class.getSimpleName());
             procesadorTarea.procesarTarea(tareaDTO, new TextTransformStrategy());
         } else if (tipoTarea.equals(TipoTarea.HASH_PW)){
+            log.info(HASH_PW_TASK, LoggingTag.THREAD, Thread.currentThread().getName(), tipoTarea,LocalDateTime.now().withNano(0), ExecutorThread.class.getSimpleName());
             procesadorTarea.procesarTarea(tareaDTO, new HasherStrategy());
         }
     }

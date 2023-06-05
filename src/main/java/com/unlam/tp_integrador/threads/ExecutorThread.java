@@ -7,6 +7,7 @@ import com.unlam.tp_integrador.entities.TareaEntity;
 import com.unlam.tp_integrador.enums.StatusTarea;
 import com.unlam.tp_integrador.enums.TipoTarea;
 import com.unlam.tp_integrador.exceptions.TareaNotFoundException;
+import com.unlam.tp_integrador.exceptions.UnexpectedException;
 import com.unlam.tp_integrador.mapper.MapperTarea;
 import com.unlam.tp_integrador.processor.ProcesadorTarea;
 import com.unlam.tp_integrador.repositories.TareaRepository;
@@ -30,6 +31,7 @@ public class ExecutorThread extends Thread {
     private final String TASK_FOUND = "{} - Tarea encontrada con id: {} - {} - {}";
     private final String INSERT_TASK_IN_PROGRESS = "{} - Guardando tarea con id: {} EN PROGRESO - {} - {}";
     private final String TASK_NOT_FOUND = "{} - Tarea no encontrada - {} - {}";
+    private final String ERROR = "{} - Error en sleep thread - {} - {}";
 
     private final TareaDTO tareaDTO;
     private final ProcesadorTarea procesadorTarea;
@@ -53,7 +55,8 @@ public class ExecutorThread extends Thread {
             log.info(EXECUTION_THREAD, LoggingTag.THREAD, Thread.currentThread().getName(), LocalDateTime.now().withNano(0), ExecutorThread.class.getSimpleName());
             Thread.sleep(15000);
         } catch (InterruptedException e) {
-            throw new RuntimeException(e);
+            log.error(ERROR, LoggingTag.THREAD, Thread.currentThread().getName(), LocalDateTime.now().withNano(0));
+            throw new UnexpectedException();
         }
 
         log.info(LOOK_FOR_TASK, LoggingTag.THREAD, this.tareaDTO.getId(), LocalDateTime.now().withNano(0), Thread.currentThread().getName());

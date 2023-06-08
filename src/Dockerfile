@@ -12,9 +12,7 @@ RUN apt-get update && \
 # Verificar si el archivo POM está presente en el directorio de trabajo
 RUN ls
 
-RUN cd ..
-
-RUN ls
+RUN pwd
 
 # Verificar si el archivo POM se puede leer correctamente
 RUN cat ../pom.xml

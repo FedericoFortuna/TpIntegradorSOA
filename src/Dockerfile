@@ -1,6 +1,6 @@
 FROM openjdk:11
 
-WORKDIR /app
+WORKDIR /src
 
 RUN apt-get update && \
     apt-get install -y maven

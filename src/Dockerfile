@@ -1,6 +1,8 @@
 FROM openjdk:11
 
-WORKDIR ./
+WORKDIR /usr/src/app
+
+COPY . .
 
 # Instalar Maven
 RUN apt-get update && \

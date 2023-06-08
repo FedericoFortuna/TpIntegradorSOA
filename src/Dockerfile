@@ -1,6 +1,6 @@
 FROM openjdk:11
 
-WORKDIR /src
+WORKDIR /app
 
 # Instalar Maven
 RUN apt-get update && \
@@ -9,7 +9,7 @@ RUN apt-get update && \
 COPY ../pom.xml .
 COPY . .
 
-RUN mvn clean package
+RUN mvn clean install
 
 EXPOSE 8080
 

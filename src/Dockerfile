@@ -14,11 +14,7 @@ RUN ls
 # Ejecutar mvn clean install
 RUN mvn clean package
 
-RUN cd target
-
-RUN pwd
-
-RUN ls
+RUN ls target
 
 EXPOSE 8080
 

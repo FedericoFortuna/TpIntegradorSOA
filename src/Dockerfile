@@ -9,6 +9,8 @@ WORKDIR /usr/src/app
 # Copiar todos los archivos del proyecto al directorio de trabajo
 COPY . .
 
+RUN ls
+
 # Ejecutar mvn clean install
 RUN mvn clean install
 

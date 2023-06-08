@@ -1,4 +1,4 @@
-FROM openjdk:11
+FROM adoptopenjdk:17-jdk-hotspot
 
 WORKDIR /usr/src/app
 

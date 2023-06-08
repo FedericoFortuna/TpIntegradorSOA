@@ -2,11 +2,12 @@ FROM openjdk:11
 
 WORKDIR /app
 
+# Instalar Maven
 RUN apt-get update && \
     apt-get install -y maven
 
 COPY ../pom.xml .
-COPY src ./src
+COPY ../src ./src
 
 RUN mvn clean package
 

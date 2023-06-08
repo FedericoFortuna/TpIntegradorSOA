@@ -13,7 +13,7 @@ RUN apt-get update && \
 RUN ls
 
 # Verificar si el archivo POM se puede leer correctamente
-RUN pom.xml
+RUN cat pom.xml
 
 # Ejecutar mvn clean install
 RUN mvn clean install

@@ -14,8 +14,12 @@ RUN ls
 # Ejecutar mvn clean install
 RUN mvn clean package
 
+RUN cd target
+
+RUN pwd
+
 RUN ls
 
 EXPOSE 8080
 
-CMD ["java", "-jar", "TpIntegradorSOA-0.0.1-SNAPSHOT.jar"]
+CMD ["java", "-jar", "target/TpIntegradorSOA-0.0.1-SNAPSHOT.jar"]

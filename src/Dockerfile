@@ -17,7 +17,7 @@ RUN cd ..
 RUN ls
 
 # Verificar si el archivo POM se puede leer correctamente
-RUN cat pom.xml
+RUN cat ../pom.xml
 
 # Ejecutar mvn clean install
 RUN mvn clean install

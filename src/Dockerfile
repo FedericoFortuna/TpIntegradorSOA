@@ -18,9 +18,11 @@ RUN ls target
 
 RUN ls
 
-COPY target/*.jar  /app.jar
+RUN pwd
 
-RUN ls target
+COPY target/tpIntegrador-0.0.1-SNAPSHOT.jar  .
+
+RUN ls
 
 EXPOSE 8080
 

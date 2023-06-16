@@ -7,8 +7,6 @@ RUN apt-get update && \
 WORKDIR /usr/src/app
 
 # Copiar el pom.xml y los archivos necesarios para construir el proyecto
-COPY pom.xml .
-COPY src ./src
 
 # Construir el proyecto
 RUN mvn clean package

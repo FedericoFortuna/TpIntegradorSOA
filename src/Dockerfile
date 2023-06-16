@@ -14,7 +14,7 @@ RUN ls
 # Ejecutar mvn clean install
 RUN mvn clean package
 
-COPY . .
+COPY target/*.jar  /app.jar
 
 RUN ls target
 

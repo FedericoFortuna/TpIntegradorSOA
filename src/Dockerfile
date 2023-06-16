@@ -18,10 +18,10 @@ RUN ls target
 
 RUN ls
 
-COPY target/*.jar  .
+COPY target/.  .
 
 RUN ls
 
 EXPOSE 8080
 
-CMD ["java", "-jar", "target/tpIntegrador-0.0.1-SNAPSHOT.jar"]
+CMD ["java", "-jar", "tpIntegrador-0.0.1-SNAPSHOT.jar"]

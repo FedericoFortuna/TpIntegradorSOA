@@ -18,7 +18,7 @@ RUN ls target
 
 RUN ls
 
-COPY target/tpIntegrador-0.0.1-SNAPSHOT.jar  .
+COPY target/*.jar  .
 
 RUN ls
 

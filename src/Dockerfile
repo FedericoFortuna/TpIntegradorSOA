@@ -18,7 +18,7 @@ RUN ls target
 
 RUN ls
 
-COPY target/.  .
+COPY target/*.jar  .
 
 RUN ls
 

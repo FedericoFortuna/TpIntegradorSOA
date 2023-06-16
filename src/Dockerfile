@@ -6,20 +6,17 @@ RUN apt-get update && \
 
 WORKDIR /usr/src/app
 
-# Copiar todos los archivos del proyecto al directorio de trabajo
-COPY . .
+# Copiar el pom.xml y los archivos necesarios para construir el proyecto
+COPY pom.xml .
+COPY src ./src
 
-RUN ls
-
-# Ejecutar mvn clean install
+# Construir el proyecto
 RUN mvn clean package
 
-RUN ls target
+# Copiar el archivo JAR generado al directorio actual
+RUN cp target/*.jar .
 
-RUN ls
-
-COPY target/*.jar  .
-
+# Mostrar los archivos en el directorio actual
 RUN ls
 
 EXPOSE 8080

@@ -14,6 +14,8 @@ RUN ls
 # Ejecutar mvn clean install
 RUN mvn clean package
 
+COPY . .
+
 RUN ls target
 
 EXPOSE 8080

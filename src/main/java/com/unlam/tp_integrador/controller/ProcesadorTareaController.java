@@ -27,7 +27,7 @@ public class ProcesadorTareaController {
     @Operation(summary = "Publicar tarea",
             responses = {
                     @ApiResponse(responseCode = "200", description = "OK"),
-                    @ApiResponse(responseCode = "500", description = "Error Ineserado")})
+                    @ApiResponse(responseCode = "500", description = "Error Inesperado")})
     @PostMapping(value = "/task")
     public ResponseEntity<String> postTask(@RequestBody TareaDTO tareaDTO){
         log.info(POST_TASK_ENDPOINT, LoggingTag.CONTROLLER, LocalDateTime.now(), ProcesadorTareaController.class.getSimpleName());
@@ -39,7 +39,7 @@ public class ProcesadorTareaController {
     @Operation(summary = "Obtener resultados",
             responses = {
                     @ApiResponse(responseCode = "200", description = "OK"),
-                    @ApiResponse(responseCode = "500", description = "Error Ineserado")})
+                    @ApiResponse(responseCode = "500", description = "Error Inesperado")})
     @GetMapping(value = "/task/{idTask}")
     public ResponseEntity<String> getTask(@PathVariable String idTask){
         log.info(GET_TASK_ENDPOINT, LoggingTag.CONTROLLER, idTask, LocalDateTime.now(), ProcesadorTareaController.class.getSimpleName());

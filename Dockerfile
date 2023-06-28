@@ -4,6 +4,8 @@ FROM ubuntu:latest
 RUN apt-get update && \
     apt-get install -y openjdk-17-jdk maven
 
+RUN pwd 
+
 WORKDIR /usr/src/app
 
 RUN pwd

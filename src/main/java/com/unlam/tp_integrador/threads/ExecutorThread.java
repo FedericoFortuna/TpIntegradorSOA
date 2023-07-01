@@ -11,6 +11,7 @@ import com.unlam.tp_integrador.exceptions.UnexpectedException;
 import com.unlam.tp_integrador.mapper.MapperTarea;
 import com.unlam.tp_integrador.processor.ProcesadorTarea;
 import com.unlam.tp_integrador.repositories.TareaRepository;
+import com.unlam.tp_integrador.strategy.process.BraileTransformStrategy;
 import com.unlam.tp_integrador.strategy.process.CalculationStrategy;
 import com.unlam.tp_integrador.strategy.process.HasherStrategy;
 import com.unlam.tp_integrador.strategy.process.TextTransformStrategy;
@@ -35,6 +36,7 @@ public class ExecutorThread extends Thread {
     private final String CALCULATION_TASK = "{} - Hilo: {} - para tarea de tipo {} - {} - {}";
     private final String TEXT_TRANSFORM_TASK = "{} - Hilo: {} - para tarea de tipo {} - {} - {}";
     private final String HASH_PW_TASK = "{} - Hilo: {} - para tarea de tipo {} - {} - {}";
+    private final String BRAILE_TASK = "{} - Hilo: {} - para tarea de tipo {} - {} - {}";
 
     private final TareaDTO tareaDTO;
     private final ProcesadorTarea procesadorTarea;
@@ -94,6 +96,9 @@ public class ExecutorThread extends Thread {
         } else if (tipoTarea.equals(TipoTarea.HASH_PW)){
             log.info(HASH_PW_TASK, LoggingTag.THREAD, Thread.currentThread().getName(), tipoTarea,LocalDateTime.now().withNano(0), ExecutorThread.class.getSimpleName());
             procesadorTarea.procesarTarea(tareaDTO, new HasherStrategy());
+        } else if (tipoTarea.equals(TipoTarea.BRAILE)){
+            log.info(BRAILE_TASK, LoggingTag.THREAD, Thread.currentThread().getName(), tipoTarea,LocalDateTime.now().withNano(0), ExecutorThread.class.getSimpleName());
+            procesadorTarea.procesarTarea(tareaDTO, new BraileTransformStrategy());
         }
     }
 

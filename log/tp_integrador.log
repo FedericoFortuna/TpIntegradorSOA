@@ -1050,3 +1050,163 @@ java.lang.InterruptedException: sleep interrupted
 Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-214]
 2023-06-25 16:21:27,733 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
 2023-06-25 16:21:27,874 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2023-07-01 13:05:00,396 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+2023-07-01 13:05:00,514 [restartedMain] INFO  c.unlam.tp_integrador.SoaApplication - Starting SoaApplication using Java 17.0.7 with PID 13468 (C:\Users\ignacio maciel\IdeaProjects\TpIntegradorSOA\target\classes started by ignacio maciel in C:\Users\ignacio maciel\IdeaProjects\TpIntegradorSOA)
+2023-07-01 13:05:00,517 [restartedMain] INFO  c.unlam.tp_integrador.SoaApplication - No active profile set, falling back to 1 default profile: "default"
+2023-07-01 13:05:00,691 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-07-01 13:05:00,692 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-07-01 13:05:02,700 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-07-01 13:05:02,875 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 152 ms. Found 1 JPA repository interfaces.
+2023-07-01 13:05:04,509 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8083 (http)
+2023-07-01 13:05:04,542 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8083"]
+2023-07-01 13:05:04,546 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-07-01 13:05:04,550 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-07-01 13:05:04,863 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-07-01 13:05:04,866 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4171 ms
+2023-07-01 13:05:04,905 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-07-01 13:05:05,649 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2023-07-01 13:05:05,652 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-07-01 13:05:05,671 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2023-07-01 13:05:06,150 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-07-01 13:05:06,240 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-07-01 13:05:06,781 [restartedMain] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-07-01 13:05:08,666 [restartedMain] DEBUG org.hibernate.SQL - drop table if exists task cascade 
+2023-07-01 13:05:08,676 [restartedMain] DEBUG org.hibernate.SQL - create table task (id varchar(255) not null, task_details text not null, resultado varchar(700), status varchar(25) not null, task_type varchar(255) not null, primary key (id))
+2023-07-01 13:05:08,692 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-07-01 13:05:08,708 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-07-01 13:05:08,721 [restartedMain] INFO  c.u.t.communication.MessageQueue - [CONFIGURATION] - Cola de mensajes inexistente - MessageQueue
+2023-07-01 13:05:08,721 [restartedMain] INFO  c.u.t.communication.MessageQueue - [CONFIGURATION] - Cola de mensajes ya creado. Objeto MessageQueue(queue=[]) - MessageQueue
+2023-07-01 13:05:09,736 [restartedMain] INFO  c.u.t.communication.MessageQueue - [CONFIGURATION] - Cola de mensajes ya creado. Objeto MessageQueue(queue=[]) - MessageQueue
+2023-07-01 13:05:09,768 [restartedMain] INFO  c.u.t.c.config.MessageQueueConfig - [CONFIGURATION] - Creando cola de mensajes: 2023-07-01T13:05:09 - MessageQueueConfig
+2023-07-01 13:05:09,768 [restartedMain] INFO  c.u.t.communication.MessageQueue - [CONFIGURATION] - Cola de mensajes ya creado. Objeto MessageQueue(queue=[]) - MessageQueue
+2023-07-01 13:05:10,124 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-07-01 13:05:12,408 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2023-07-01 13:05:12,443 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8083"]
+2023-07-01 13:05:12,491 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8083 (http) with context path ''
+2023-07-01 13:05:12,508 [restartedMain] INFO  c.unlam.tp_integrador.SoaApplication - Started SoaApplication in 13.104 seconds (process running for 19.371)
+2023-07-01 13:05:12,511 [restartedMain] INFO  c.u.t.c.MessageConsumerRunner - [MESSAGE_CONSUMER] - Hilo consumidor. Inicio: 2023-07-01T13:05:12 - MessageConsumer
+2023-07-01 13:11:24,165 [http-nio-8083-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-07-01 13:11:24,166 [http-nio-8083-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-07-01 13:11:24,168 [http-nio-8083-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2023-07-01 13:11:24,418 [http-nio-8083-exec-2] INFO  c.u.t.c.ProcesadorTareaController - [CONTROLLER] - Recibido: 2023-07-01T13:11:24.418622700 - ProcesadorTareaController
+2023-07-01 13:11:24,418 [http-nio-8083-exec-2] INFO  c.u.t.s.ProcesadorTareaServiceImpl - [SERVICE_EXECUTION] - Creando tarea con id: b59174c3-3b64-4514-962d-85c456b05a39 - 2023-07-01T13:11:24 - ProcesadorTareaServiceImpl
+2023-07-01 13:11:24,528 [http-nio-8083-exec-2] DEBUG org.hibernate.SQL - select t1_0.id,t1_0.task_details,t1_0.resultado,t1_0.status,t1_0.task_type from task t1_0 where t1_0.id=?
+2023-07-01 13:11:24,690 [http-nio-8083-exec-2] DEBUG org.hibernate.SQL - insert into task (task_details, resultado, status, task_type, id) values (?, ?, ?, ?, ?)
+2023-07-01 13:11:24,700 [http-nio-8083-exec-2] INFO  c.u.t.communication.MessageQueue - [CONFIGURATION] - Cola de mensajes ya creado. Objeto MessageQueue(queue=[]) - MessageQueue
+2023-07-01 13:11:24,701 [http-nio-8083-exec-2] INFO  c.u.t.s.ProcesadorTareaServiceImpl - [SERVICE_EXECUTION] - Creando hilo para tarea con id: b59174c3-3b64-4514-962d-85c456b05a39 - 2023-07-01T13:11:24 - ProcesadorTareaServiceImpl
+2023-07-01 13:11:24,701 [Thread-8] INFO  c.u.t.threads.ExecutorThread - [THREAD_EXECUTOR] - Inicio ejecucion hilo: Thread-8 - 2023-07-01T13:11:24 - ExecutorThread
+2023-07-01 13:11:39,715 [Thread-8] INFO  c.u.t.threads.ExecutorThread - [THREAD_EXECUTOR] - Buscando tarea con id: b59174c3-3b64-4514-962d-85c456b05a39 - 2023-07-01T13:11:39 - Thread-8
+2023-07-01 13:11:39,721 [Thread-8] DEBUG org.hibernate.SQL - select t1_0.id,t1_0.task_details,t1_0.resultado,t1_0.status,t1_0.task_type from task t1_0 where t1_0.id=?
+2023-07-01 13:11:39,729 [Thread-8] INFO  c.u.t.threads.ExecutorThread - [THREAD_EXECUTOR] - Tarea encontrada con id: b59174c3-3b64-4514-962d-85c456b05a39 - 2023-07-01T13:11:39 - Thread-8
+2023-07-01 13:11:39,737 [Thread-8] INFO  c.u.t.threads.ExecutorThread - [THREAD_EXECUTOR] - Hilo: Thread-8 - para tarea de tipo HASH_PW - 2023-07-01T13:11:39 - ExecutorThread
+2023-07-01 13:11:39,740 [Thread-8] INFO  c.u.t.threads.ExecutorThread - [THREAD_EXECUTOR] - Guardando tarea con id: b59174c3-3b64-4514-962d-85c456b05a39 EN PROGRESO - 2023-07-01T13:11:39 - Thread-8
+2023-07-01 13:11:39,740 [Thread-8] DEBUG org.hibernate.SQL - select t1_0.id,t1_0.task_details,t1_0.resultado,t1_0.status,t1_0.task_type from task t1_0 where t1_0.id=?
+2023-07-01 13:11:39,742 [Thread-8] DEBUG org.hibernate.SQL - update task set task_details=?, resultado=?, status=?, task_type=? where id=?
+2023-07-01 13:11:39,748 [Thread-8] INFO  c.u.t.threads.ExecutorThread - [THREAD_EXECUTOR] - Hilo: Thread-8 enviando mensaje - 2023-07-01T13:11:39 - ExecutorThread
+2023-07-01 13:11:39,749 [Thread-8] INFO  c.u.t.communication.MessageProducer - [MESSAGE_PRODUCER] - Envio: 2023-07-01T13:11:39 - enviando mensaje con id: b59174c3-3b64-4514-962d-85c456b05a39 - Hilo: Thread-8 - MessageProducer
+2023-07-01 13:11:39,749 [Thread-8] INFO  c.u.t.communication.MessageQueue - [MESSAGE_QUEUE] - Agregando mensaje con id: b59174c3-3b64-4514-962d-85c456b05a39 - MessageQueue
+2023-07-01 13:11:40,160 [task-1] INFO  c.u.t.communication.MessageConsumer - [MESSAGE_CONSUMER] - COLA CON MENSAJES DENTRO. 2023-07-01T13:11:40 - MessageConsumer
+2023-07-01 13:11:40,161 [task-1] INFO  c.u.t.communication.MessageConsumer - [MESSAGE_CONSUMER] - Inicio: 2023-07-01T13:11:40 - procesando mensaje con id: b59174c3-3b64-4514-962d-85c456b05a39 - MessageConsumer
+2023-07-01 13:11:40,231 [task-1] DEBUG org.hibernate.SQL - update task set status=?,resultado=? where id=?
+2023-07-01 13:12:10,132 [http-nio-8083-exec-5] INFO  c.u.t.c.ProcesadorTareaController - [CONTROLLER] - Obteniendo info para id: b59174c3-3b64-4514-962d-85c456b05a39 - 2023-07-01T13:12:10.132879 - ProcesadorTareaController
+2023-07-01 13:12:10,133 [http-nio-8083-exec-5] INFO  c.u.t.s.ProcesadorTareaServiceImpl - [SERVICE_EXECUTION] - Buscando resultado de tarea con id: b59174c3-3b64-4514-962d-85c456b05a39 - 2023-07-01T13:12:10 - ProcesadorTareaServiceImpl
+2023-07-01 13:12:10,134 [http-nio-8083-exec-5] DEBUG org.hibernate.SQL - select t1_0.id,t1_0.task_details,t1_0.resultado,t1_0.status,t1_0.task_type from task t1_0 where t1_0.id=?
+2023-07-01 13:12:10,137 [http-nio-8083-exec-5] INFO  c.u.t.s.ProcesadorTareaServiceImpl - [SERVICE_EXECUTION] - Tarea encontrada con id: b59174c3-3b64-4514-962d-85c456b05a39 - 2023-07-01T13:12:10 - ProcesadorTareaServiceImpl
+2023-07-01 13:21:41,900 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-07-01 13:21:41,905 [SpringApplicationShutdownHook] INFO  o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2023-07-01 13:21:41,909 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - drop table if exists task cascade 
+2023-07-01 13:21:41,907 [task-1] ERROR o.s.a.i.SimpleAsyncUncaughtExceptionHandler - Unexpected exception occurred invoking async method: public void com.unlam.tp_integrador.communication.MessageConsumer.consumeMessages() throws java.lang.InterruptedException
+java.lang.InterruptedException: sleep interrupted
+	at java.base/java.lang.Thread.sleep(Native Method)
+	at com.unlam.tp_integrador.communication.MessageConsumer.consumeMessages(MessageConsumer.java:32)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750)
+	at org.springframework.aop.interceptor.AsyncExecutionInterceptor.lambda$invoke$0(AsyncExecutionInterceptor.java:115)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-07-01 13:21:42,525 [SpringApplicationShutdownHook] WARN  o.s.b.f.s.DisposableBeanAdapter - Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-214]
+2023-07-01 13:21:42,526 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-07-01 13:21:42,560 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2023-07-01 13:35:43,628 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+2023-07-01 13:35:43,768 [restartedMain] INFO  c.unlam.tp_integrador.SoaApplication - Starting SoaApplication using Java 17.0.7 with PID 14712 (C:\Users\ignacio maciel\IdeaProjects\TpIntegradorSOA\target\classes started by ignacio maciel in C:\Users\ignacio maciel\IdeaProjects\TpIntegradorSOA)
+2023-07-01 13:35:43,771 [restartedMain] INFO  c.unlam.tp_integrador.SoaApplication - No active profile set, falling back to 1 default profile: "default"
+2023-07-01 13:35:43,949 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-07-01 13:35:43,949 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-07-01 13:35:46,094 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-07-01 13:35:46,218 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 107 ms. Found 1 JPA repository interfaces.
+2023-07-01 13:35:47,412 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8083 (http)
+2023-07-01 13:35:47,427 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8083"]
+2023-07-01 13:35:47,428 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-07-01 13:35:47,429 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-07-01 13:35:47,535 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-07-01 13:35:47,537 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3584 ms
+2023-07-01 13:35:47,575 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-07-01 13:35:47,976 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2023-07-01 13:35:47,979 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-07-01 13:35:47,993 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2023-07-01 13:35:48,189 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-07-01 13:35:48,301 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-07-01 13:35:48,853 [restartedMain] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-07-01 13:35:50,045 [restartedMain] DEBUG org.hibernate.SQL - drop table if exists task cascade 
+2023-07-01 13:35:50,058 [restartedMain] DEBUG org.hibernate.SQL - create table task (id varchar(255) not null, task_details text not null, resultado varchar(700), status varchar(25) not null, task_type varchar(255) not null, primary key (id))
+2023-07-01 13:35:50,070 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-07-01 13:35:50,101 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-07-01 13:35:50,123 [restartedMain] INFO  c.u.t.communication.MessageQueue - [CONFIGURATION] - Cola de mensajes inexistente - MessageQueue
+2023-07-01 13:35:50,123 [restartedMain] INFO  c.u.t.communication.MessageQueue - [CONFIGURATION] - Cola de mensajes ya creado. Objeto MessageQueue(queue=[]) - MessageQueue
+2023-07-01 13:35:51,034 [restartedMain] INFO  c.u.t.communication.MessageQueue - [CONFIGURATION] - Cola de mensajes ya creado. Objeto MessageQueue(queue=[]) - MessageQueue
+2023-07-01 13:35:51,058 [restartedMain] INFO  c.u.t.c.config.MessageQueueConfig - [CONFIGURATION] - Creando cola de mensajes: 2023-07-01T13:35:51 - MessageQueueConfig
+2023-07-01 13:35:51,058 [restartedMain] INFO  c.u.t.communication.MessageQueue - [CONFIGURATION] - Cola de mensajes ya creado. Objeto MessageQueue(queue=[]) - MessageQueue
+2023-07-01 13:35:51,309 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-07-01 13:35:53,258 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2023-07-01 13:35:53,293 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8083"]
+2023-07-01 13:35:53,357 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8083 (http) with context path ''
+2023-07-01 13:35:53,377 [restartedMain] INFO  c.unlam.tp_integrador.SoaApplication - Started SoaApplication in 10.599 seconds (process running for 12.937)
+2023-07-01 13:35:53,380 [restartedMain] INFO  c.u.t.c.MessageConsumerRunner - [MESSAGE_CONSUMER] - Hilo consumidor. Inicio: 2023-07-01T13:35:53 - MessageConsumer
+2023-07-01 13:36:23,640 [http-nio-8083-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-07-01 13:36:23,641 [http-nio-8083-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-07-01 13:36:23,643 [http-nio-8083-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2023-07-01 13:36:23,900 [http-nio-8083-exec-1] INFO  c.u.t.c.ProcesadorTareaController - [CONTROLLER] - Recibido: 2023-07-01T13:36:23.900969100 - ProcesadorTareaController
+2023-07-01 13:36:23,901 [http-nio-8083-exec-1] INFO  c.u.t.s.ProcesadorTareaServiceImpl - [SERVICE_EXECUTION] - Creando tarea con id: 419840d9-1033-462e-a7e7-47eda8462665 - 2023-07-01T13:36:23 - ProcesadorTareaServiceImpl
+2023-07-01 13:36:24,025 [http-nio-8083-exec-1] DEBUG org.hibernate.SQL - select t1_0.id,t1_0.task_details,t1_0.resultado,t1_0.status,t1_0.task_type from task t1_0 where t1_0.id=?
+2023-07-01 13:36:24,165 [http-nio-8083-exec-1] DEBUG org.hibernate.SQL - insert into task (task_details, resultado, status, task_type, id) values (?, ?, ?, ?, ?)
+2023-07-01 13:36:24,181 [http-nio-8083-exec-1] INFO  c.u.t.communication.MessageQueue - [CONFIGURATION] - Cola de mensajes ya creado. Objeto MessageQueue(queue=[]) - MessageQueue
+2023-07-01 13:36:24,181 [http-nio-8083-exec-1] INFO  c.u.t.s.ProcesadorTareaServiceImpl - [SERVICE_EXECUTION] - Creando hilo para tarea con id: 419840d9-1033-462e-a7e7-47eda8462665 - 2023-07-01T13:36:24 - ProcesadorTareaServiceImpl
+2023-07-01 13:36:24,181 [Thread-8] INFO  c.u.t.threads.ExecutorThread - [THREAD_EXECUTOR] - Inicio ejecucion hilo: Thread-8 - 2023-07-01T13:36:24 - ExecutorThread
+2023-07-01 13:36:34,068 [http-nio-8083-exec-4] INFO  c.u.t.c.ProcesadorTareaController - [CONTROLLER] - Obteniendo info para id: 419840d9-1033-462e-a7e7-47eda8462665 - 2023-07-01T13:36:34.068218500 - ProcesadorTareaController
+2023-07-01 13:36:34,068 [http-nio-8083-exec-4] INFO  c.u.t.s.ProcesadorTareaServiceImpl - [SERVICE_EXECUTION] - Buscando resultado de tarea con id: 419840d9-1033-462e-a7e7-47eda8462665 - 2023-07-01T13:36:34 - ProcesadorTareaServiceImpl
+2023-07-01 13:36:34,080 [http-nio-8083-exec-4] DEBUG org.hibernate.SQL - select t1_0.id,t1_0.task_details,t1_0.resultado,t1_0.status,t1_0.task_type from task t1_0 where t1_0.id=?
+2023-07-01 13:36:34,095 [http-nio-8083-exec-4] INFO  c.u.t.s.ProcesadorTareaServiceImpl - [SERVICE_EXECUTION] - Tarea encontrada con id: 419840d9-1033-462e-a7e7-47eda8462665 - 2023-07-01T13:36:34 - ProcesadorTareaServiceImpl
+2023-07-01 13:36:38,735 [http-nio-8083-exec-6] INFO  c.u.t.c.ProcesadorTareaController - [CONTROLLER] - Obteniendo info para id: 419840d9-1033-462e-a7e7-47eda8462665 - 2023-07-01T13:36:38.735206 - ProcesadorTareaController
+2023-07-01 13:36:38,736 [http-nio-8083-exec-6] INFO  c.u.t.s.ProcesadorTareaServiceImpl - [SERVICE_EXECUTION] - Buscando resultado de tarea con id: 419840d9-1033-462e-a7e7-47eda8462665 - 2023-07-01T13:36:38 - ProcesadorTareaServiceImpl
+2023-07-01 13:36:38,740 [http-nio-8083-exec-6] DEBUG org.hibernate.SQL - select t1_0.id,t1_0.task_details,t1_0.resultado,t1_0.status,t1_0.task_type from task t1_0 where t1_0.id=?
+2023-07-01 13:36:38,742 [http-nio-8083-exec-6] INFO  c.u.t.s.ProcesadorTareaServiceImpl - [SERVICE_EXECUTION] - Tarea encontrada con id: 419840d9-1033-462e-a7e7-47eda8462665 - 2023-07-01T13:36:38 - ProcesadorTareaServiceImpl
+2023-07-01 13:36:39,197 [Thread-8] INFO  c.u.t.threads.ExecutorThread - [THREAD_EXECUTOR] - Buscando tarea con id: 419840d9-1033-462e-a7e7-47eda8462665 - 2023-07-01T13:36:39 - Thread-8
+2023-07-01 13:36:39,198 [Thread-8] DEBUG org.hibernate.SQL - select t1_0.id,t1_0.task_details,t1_0.resultado,t1_0.status,t1_0.task_type from task t1_0 where t1_0.id=?
+2023-07-01 13:36:39,199 [Thread-8] INFO  c.u.t.threads.ExecutorThread - [THREAD_EXECUTOR] - Tarea encontrada con id: 419840d9-1033-462e-a7e7-47eda8462665 - 2023-07-01T13:36:39 - Thread-8
+2023-07-01 13:36:39,210 [Thread-8] INFO  c.u.t.threads.ExecutorThread - [THREAD_EXECUTOR] - Hilo: Thread-8 - para tarea de tipo BRAILE - 2023-07-01T13:36:39 - ExecutorThread
+2023-07-01 13:36:39,212 [Thread-8] INFO  c.u.t.threads.ExecutorThread - [THREAD_EXECUTOR] - Guardando tarea con id: 419840d9-1033-462e-a7e7-47eda8462665 EN PROGRESO - 2023-07-01T13:36:39 - Thread-8
+2023-07-01 13:36:39,214 [Thread-8] DEBUG org.hibernate.SQL - select t1_0.id,t1_0.task_details,t1_0.resultado,t1_0.status,t1_0.task_type from task t1_0 where t1_0.id=?
+2023-07-01 13:36:39,217 [Thread-8] DEBUG org.hibernate.SQL - update task set task_details=?, resultado=?, status=?, task_type=? where id=?
+2023-07-01 13:36:39,225 [Thread-8] INFO  c.u.t.threads.ExecutorThread - [THREAD_EXECUTOR] - Hilo: Thread-8 enviando mensaje - 2023-07-01T13:36:39 - ExecutorThread
+2023-07-01 13:36:39,226 [Thread-8] INFO  c.u.t.communication.MessageProducer - [MESSAGE_PRODUCER] - Envio: 2023-07-01T13:36:39 - enviando mensaje con id: 419840d9-1033-462e-a7e7-47eda8462665 - Hilo: Thread-8 - MessageProducer
+2023-07-01 13:36:39,227 [Thread-8] INFO  c.u.t.communication.MessageQueue - [MESSAGE_QUEUE] - Agregando mensaje con id: 419840d9-1033-462e-a7e7-47eda8462665 - MessageQueue
+2023-07-01 13:36:39,229 [task-1] INFO  c.u.t.communication.MessageConsumer - [MESSAGE_CONSUMER] - COLA CON MENSAJES DENTRO. 2023-07-01T13:36:39 - MessageConsumer
+2023-07-01 13:36:39,229 [task-1] INFO  c.u.t.communication.MessageConsumer - [MESSAGE_CONSUMER] - Inicio: 2023-07-01T13:36:39 - procesando mensaje con id: 419840d9-1033-462e-a7e7-47eda8462665 - MessageConsumer
+2023-07-01 13:36:39,349 [task-1] DEBUG org.hibernate.SQL - update task set status=?,resultado=? where id=?
+2023-07-01 13:36:39,776 [http-nio-8083-exec-7] INFO  c.u.t.c.ProcesadorTareaController - [CONTROLLER] - Obteniendo info para id: 419840d9-1033-462e-a7e7-47eda8462665 - 2023-07-01T13:36:39.776498100 - ProcesadorTareaController
+2023-07-01 13:36:39,777 [http-nio-8083-exec-7] INFO  c.u.t.s.ProcesadorTareaServiceImpl - [SERVICE_EXECUTION] - Buscando resultado de tarea con id: 419840d9-1033-462e-a7e7-47eda8462665 - 2023-07-01T13:36:39 - ProcesadorTareaServiceImpl
+2023-07-01 13:36:39,778 [http-nio-8083-exec-7] DEBUG org.hibernate.SQL - select t1_0.id,t1_0.task_details,t1_0.resultado,t1_0.status,t1_0.task_type from task t1_0 where t1_0.id=?
+2023-07-01 13:36:39,779 [http-nio-8083-exec-7] INFO  c.u.t.s.ProcesadorTareaServiceImpl - [SERVICE_EXECUTION] - Tarea encontrada con id: 419840d9-1033-462e-a7e7-47eda8462665 - 2023-07-01T13:36:39 - ProcesadorTareaServiceImpl
+2023-07-01 13:36:40,690 [http-nio-8083-exec-8] INFO  c.u.t.c.ProcesadorTareaController - [CONTROLLER] - Obteniendo info para id: 419840d9-1033-462e-a7e7-47eda8462665 - 2023-07-01T13:36:40.690452500 - ProcesadorTareaController
+2023-07-01 13:36:40,690 [http-nio-8083-exec-8] INFO  c.u.t.s.ProcesadorTareaServiceImpl - [SERVICE_EXECUTION] - Buscando resultado de tarea con id: 419840d9-1033-462e-a7e7-47eda8462665 - 2023-07-01T13:36:40 - ProcesadorTareaServiceImpl
+2023-07-01 13:36:40,691 [http-nio-8083-exec-8] DEBUG org.hibernate.SQL - select t1_0.id,t1_0.task_details,t1_0.resultado,t1_0.status,t1_0.task_type from task t1_0 where t1_0.id=?
+2023-07-01 13:36:40,693 [http-nio-8083-exec-8] INFO  c.u.t.s.ProcesadorTareaServiceImpl - [SERVICE_EXECUTION] - Tarea encontrada con id: 419840d9-1033-462e-a7e7-47eda8462665 - 2023-07-01T13:36:40 - ProcesadorTareaServiceImpl

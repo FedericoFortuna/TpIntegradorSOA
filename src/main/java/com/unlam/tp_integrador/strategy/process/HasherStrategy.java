@@ -43,6 +43,7 @@ public class HasherStrategy implements ProcesamientoStrategy {
 
             // Codificar el hash en Base64 para su almacenamiento
             return Base64.getEncoder().encodeToString(hashedBytes);
+
         } catch (NoSuchAlgorithmException e) {
             throw new HashErrorException();
         }

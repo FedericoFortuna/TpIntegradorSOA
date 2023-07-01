@@ -15,6 +15,7 @@ import com.unlam.tp_integrador.strategy.process.BraileTransformStrategy;
 import com.unlam.tp_integrador.strategy.process.CalculationStrategy;
 import com.unlam.tp_integrador.strategy.process.HasherStrategy;
 import com.unlam.tp_integrador.strategy.process.TextTransformStrategy;
+import com.unlam.tp_integrador.strategy.process.CuilStrategy;
 import com.unlam.tp_integrador.tools.LoggingTag;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,6 +38,7 @@ public class ExecutorThread extends Thread {
     private final String TEXT_TRANSFORM_TASK = "{} - Hilo: {} - para tarea de tipo {} - {} - {}";
     private final String HASH_PW_TASK = "{} - Hilo: {} - para tarea de tipo {} - {} - {}";
     private final String BRAILE_TASK = "{} - Hilo: {} - para tarea de tipo {} - {} - {}";
+    private final String CUIL_TASK = "{} - Hilo: {} - para tarea de tipo {} - {} - {}";
 
     private final TareaDTO tareaDTO;
     private final ProcesadorTarea procesadorTarea;
@@ -99,6 +101,9 @@ public class ExecutorThread extends Thread {
         } else if (tipoTarea.equals(TipoTarea.BRAILE)){
             log.info(BRAILE_TASK, LoggingTag.THREAD, Thread.currentThread().getName(), tipoTarea,LocalDateTime.now().withNano(0), ExecutorThread.class.getSimpleName());
             procesadorTarea.procesarTarea(tareaDTO, new BraileTransformStrategy());
+        } else if (tipoTarea.equals(TipoTarea.CUIL)){
+            log.info(CUIL_TASK, LoggingTag.THREAD, Thread.currentThread().getName(), tipoTarea,LocalDateTime.now().withNano(0), ExecutorThread.class.getSimpleName());
+            procesadorTarea.procesarTarea(tareaDTO, new CuilStrategy());
         }
     }
 

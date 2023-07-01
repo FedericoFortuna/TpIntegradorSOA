@@ -4,5 +4,6 @@ public enum TipoTarea {
     CALCULATION,
     TEXT_TRANSFORM,
     HASH_PW,
-    BRAILE
+    BRAILE,
+    CUIL
 }

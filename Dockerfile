@@ -4,7 +4,7 @@ FROM ubuntu:latest
 RUN apt-get update && \
     apt-get install -y openjdk-17-jdk maven
 
-RUN pwd 
+RUN pwd
 
 WORKDIR /usr/src/app
 
@@ -15,17 +15,16 @@ COPY . .
 
 RUN ls
 
-# Ejecutar mvn clean install
-RUN mvn clean package
+# Compilar el proyecto y generar el archivo JAR
+RUN mvn clean package -DskipTests
 
 RUN ls target
 
-RUN ls
-
-COPY target/*.jar  .
+# Copiar el archivo JAR generado al directorio raíz
+RUN cp target/*.jar app.jar
 
 RUN ls
 
 EXPOSE 8080
 
-#CMD ["java", "-jar", "tpIntegrador-0.0.1-SNAPSHOT.jar"]
+CMD ["java", "-jar", "app.jar"]

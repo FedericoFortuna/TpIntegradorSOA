@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Combobox, Input Text and Button</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link href="styles.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+  <form>
+    <label for="combobox">Operacion:</label>
+    <select class="form-control" name="combobox" id="combobox">
+      <option value="">Seleccione una opción</option>
+      <option value="TEXT_TRANSFORM">Transformar texto</option>
+      <option value="HASH_PW">Encriptar password</option>
+      <option value="BRAILE">Traducir a braille</option>
+      <option value="CUIL">Calcular CUIL</option>
+    </select>
+    <br>
+    <label for="inputText">Ingresar texto:</label>
+    <input type="text" class="form-control" name="inputText" id="inputText" placeholder="Ingrese aqui su informacion">
+    <br>
+    <div style="display:none" id="GENERO">
+      <label for="generoCUIL">Genero:</label>
+      <select class="form-control" name="generoCUIL" id="generoCUIL">
+        <option value="M">Masculino</option>
+        <option value="F">Femenino</option>
+      </select>
+    </div>
+
+    <div style="display:none" id="TEXT_TRANSFORM">
+      <label for="text_transform">Operacion:</label>
+      <select class="form-control" name="text_transform" id="text_transform">
+        <option value="UPPERCASE">Mayuscula</option>
+        <option value="LOWERCASE">Minuscula</option>
+      </select>
+    </div>
+
+    <label for="inputResult">Resultado:</label>
+    <input type="text" class="form-control" name="inputResult" id="inputResult" disabled>
+    <br>
+    
+    <button type="submit" class="btn btn-primary" id="submit">Procesar</button>
+    <button type="button" class="btn btn-primary" id="getResult">Obtener resultado</button>
+  </form>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

@@ -53,7 +53,7 @@ $(document).ready(function() {});
 
 
   $('#getResult').click(function() {
-    var inputTextValue = $('#inputText').val();
+    var inputTextValue = $('#idTarea').val();
     $.ajax({
       url: "http://localhost:8083/task/" + inputTextValue,
       type: 'GET',

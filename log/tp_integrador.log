@@ -1,0 +1,254 @@
+2023-07-02 19:40:39,352 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+2023-07-02 19:40:39,384 [restartedMain] INFO  c.unlam.tp_integrador.SoaApplication - Starting SoaApplication using Java 17.0.7 with PID 17292 (C:\Users\PC\Desktop\Fede\Unlam\TpIntegrador\target\classes started by PC in C:\Users\PC\Desktop\Fede\Unlam\TpIntegrador)
+2023-07-02 19:40:39,385 [restartedMain] INFO  c.unlam.tp_integrador.SoaApplication - No active profile set, falling back to 1 default profile: "default"
+2023-07-02 19:40:39,417 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-07-02 19:40:39,417 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-07-02 19:40:39,923 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-07-02 19:40:39,975 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 45 ms. Found 1 JPA repository interfaces.
+2023-07-02 19:40:40,420 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8083 (http)
+2023-07-02 19:40:40,426 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8083"]
+2023-07-02 19:40:40,427 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-07-02 19:40:40,427 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-07-02 19:40:40,472 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-07-02 19:40:40,473 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1055 ms
+2023-07-02 19:40:40,494 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-07-02 19:40:40,622 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2023-07-02 19:40:40,623 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-07-02 19:40:40,632 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2023-07-02 19:40:40,722 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-07-02 19:40:40,758 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-07-02 19:40:40,950 [restartedMain] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-07-02 19:40:41,389 [restartedMain] DEBUG org.hibernate.SQL - drop table if exists task cascade 
+2023-07-02 19:40:41,394 [restartedMain] DEBUG org.hibernate.SQL - create table task (id varchar(255) not null, task_details text not null, resultado varchar(700), status varchar(25) not null, task_type varchar(255) not null, primary key (id))
+2023-07-02 19:40:41,399 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-07-02 19:40:41,404 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-07-02 19:40:41,410 [restartedMain] INFO  c.u.t.communication.MessageQueue - [CONFIGURATION] - Cola de mensajes inexistente - MessageQueue
+2023-07-02 19:40:41,410 [restartedMain] INFO  c.u.t.communication.MessageQueue - [CONFIGURATION] - Cola de mensajes ya creado. Objeto MessageQueue(queue=[]) - MessageQueue
+2023-07-02 19:40:41,746 [restartedMain] INFO  c.u.t.communication.MessageQueue - [CONFIGURATION] - Cola de mensajes ya creado. Objeto MessageQueue(queue=[]) - MessageQueue
+2023-07-02 19:40:41,758 [restartedMain] INFO  c.u.t.c.config.MessageQueueConfig - [CONFIGURATION] - Creando cola de mensajes: 2023-07-02T19:40:41 - MessageQueueConfig
+2023-07-02 19:40:41,758 [restartedMain] INFO  c.u.t.communication.MessageQueue - [CONFIGURATION] - Cola de mensajes ya creado. Objeto MessageQueue(queue=[]) - MessageQueue
+2023-07-02 19:40:41,829 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-07-02 19:40:42,432 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2023-07-02 19:40:42,440 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8083"]
+2023-07-02 19:40:42,455 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8083 (http) with context path ''
+2023-07-02 19:40:42,463 [restartedMain] INFO  c.unlam.tp_integrador.SoaApplication - Started SoaApplication in 3.362 seconds (process running for 3.772)
+2023-07-02 19:40:42,465 [restartedMain] INFO  c.u.t.c.MessageConsumerRunner - [MESSAGE_CONSUMER] - Hilo consumidor. Inicio: 2023-07-02T19:40:42 - MessageConsumer
+2023-07-02 19:41:03,413 [http-nio-8083-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-07-02 19:41:03,413 [http-nio-8083-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-07-02 19:41:03,413 [http-nio-8083-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2023-07-02 19:41:03,492 [http-nio-8083-exec-2] INFO  c.u.t.c.ProcesadorTareaController - [CONTROLLER] - Recibido: 2023-07-02T19:41:03.492250100 - ProcesadorTareaController
+2023-07-02 19:41:03,492 [http-nio-8083-exec-2] INFO  c.u.t.s.ProcesadorTareaServiceImpl - [SERVICE_EXECUTION] - Creando tarea con id: 0003265a-7e45-4789-874c-783a9a0018ee - 2023-07-02T19:41:03 - ProcesadorTareaServiceImpl
+2023-07-02 19:41:03,526 [http-nio-8083-exec-2] DEBUG org.hibernate.SQL - select t1_0.id,t1_0.task_details,t1_0.resultado,t1_0.status,t1_0.task_type from task t1_0 where t1_0.id=?
+2023-07-02 19:41:03,565 [http-nio-8083-exec-2] DEBUG org.hibernate.SQL - insert into task (task_details, resultado, status, task_type, id) values (?, ?, ?, ?, ?)
+2023-07-02 19:41:03,570 [http-nio-8083-exec-2] INFO  c.u.t.communication.MessageQueue - [CONFIGURATION] - Cola de mensajes ya creado. Objeto MessageQueue(queue=[]) - MessageQueue
+2023-07-02 19:41:03,570 [http-nio-8083-exec-2] INFO  c.u.t.s.ProcesadorTareaServiceImpl - [SERVICE_EXECUTION] - Creando hilo para tarea con id: 0003265a-7e45-4789-874c-783a9a0018ee - 2023-07-02T19:41:03 - ProcesadorTareaServiceImpl
+2023-07-02 19:41:03,570 [Thread-8] INFO  c.u.t.threads.ExecutorThread - [THREAD_EXECUTOR] - Inicio ejecucion hilo: Thread-8 - 2023-07-02T19:41:03 - ExecutorThread
+2023-07-02 19:41:18,580 [Thread-8] INFO  c.u.t.threads.ExecutorThread - [THREAD_EXECUTOR] - Buscando tarea con id: 0003265a-7e45-4789-874c-783a9a0018ee - 2023-07-02T19:41:18 - Thread-8
+2023-07-02 19:41:18,583 [Thread-8] DEBUG org.hibernate.SQL - select t1_0.id,t1_0.task_details,t1_0.resultado,t1_0.status,t1_0.task_type from task t1_0 where t1_0.id=?
+2023-07-02 19:41:18,586 [Thread-8] INFO  c.u.t.threads.ExecutorThread - [THREAD_EXECUTOR] - Tarea encontrada con id: 0003265a-7e45-4789-874c-783a9a0018ee - 2023-07-02T19:41:18 - Thread-8
+2023-07-02 19:41:18,589 [Thread-8] INFO  c.u.t.threads.ExecutorThread - [THREAD_EXECUTOR] - Hilo: Thread-8 - para tarea de tipo TEXT_TRANSFORM - 2023-07-02T19:41:18 - ExecutorThread
+2023-07-02 19:41:18,589 [Thread-8] INFO  c.u.t.threads.ExecutorThread - [THREAD_EXECUTOR] - Guardando tarea con id: 0003265a-7e45-4789-874c-783a9a0018ee EN PROGRESO - 2023-07-02T19:41:18 - Thread-8
+2023-07-02 19:41:18,591 [Thread-8] DEBUG org.hibernate.SQL - select t1_0.id,t1_0.task_details,t1_0.resultado,t1_0.status,t1_0.task_type from task t1_0 where t1_0.id=?
+2023-07-02 19:41:18,592 [Thread-8] DEBUG org.hibernate.SQL - update task set task_details=?, resultado=?, status=?, task_type=? where id=?
+2023-07-02 19:41:18,594 [Thread-8] INFO  c.u.t.threads.ExecutorThread - [THREAD_EXECUTOR] - Hilo: Thread-8 enviando mensaje - 2023-07-02T19:41:18 - ExecutorThread
+2023-07-02 19:41:18,594 [Thread-8] INFO  c.u.t.communication.MessageProducer - [MESSAGE_PRODUCER] - Envio: 2023-07-02T19:41:18 - enviando mensaje con id: 0003265a-7e45-4789-874c-783a9a0018ee - Hilo: Thread-8 - MessageProducer
+2023-07-02 19:41:18,594 [Thread-8] INFO  c.u.t.communication.MessageQueue - [MESSAGE_QUEUE] - Agregando mensaje con id: 0003265a-7e45-4789-874c-783a9a0018ee - MessageQueue
+2023-07-02 19:41:18,719 [task-1] INFO  c.u.t.communication.MessageConsumer - [MESSAGE_CONSUMER] - COLA CON MENSAJES DENTRO. 2023-07-02T19:41:18 - MessageConsumer
+2023-07-02 19:41:18,719 [task-1] INFO  c.u.t.communication.MessageConsumer - [MESSAGE_CONSUMER] - Inicio: 2023-07-02T19:41:18 - procesando mensaje con id: 0003265a-7e45-4789-874c-783a9a0018ee - MessageConsumer
+2023-07-02 19:41:18,745 [task-1] DEBUG org.hibernate.SQL - update task set status=?,resultado=? where id=?
+2023-07-02 19:41:27,120 [http-nio-8083-exec-4] INFO  c.u.t.c.ProcesadorTareaController - [CONTROLLER] - Recibido: 2023-07-02T19:41:27.120374600 - ProcesadorTareaController
+2023-07-02 19:41:27,121 [http-nio-8083-exec-4] INFO  c.u.t.s.ProcesadorTareaServiceImpl - [SERVICE_EXECUTION] - Creando tarea con id: 9173f7d9-b1ca-42e2-8479-d1fb4c8c9048 - 2023-07-02T19:41:27 - ProcesadorTareaServiceImpl
+2023-07-02 19:41:27,121 [http-nio-8083-exec-4] DEBUG org.hibernate.SQL - select t1_0.id,t1_0.task_details,t1_0.resultado,t1_0.status,t1_0.task_type from task t1_0 where t1_0.id=?
+2023-07-02 19:41:27,122 [http-nio-8083-exec-4] DEBUG org.hibernate.SQL - insert into task (task_details, resultado, status, task_type, id) values (?, ?, ?, ?, ?)
+2023-07-02 19:41:27,122 [http-nio-8083-exec-4] INFO  c.u.t.communication.MessageQueue - [CONFIGURATION] - Cola de mensajes ya creado. Objeto MessageQueue(queue=[]) - MessageQueue
+2023-07-02 19:41:27,123 [http-nio-8083-exec-4] INFO  c.u.t.s.ProcesadorTareaServiceImpl - [SERVICE_EXECUTION] - Creando hilo para tarea con id: 9173f7d9-b1ca-42e2-8479-d1fb4c8c9048 - 2023-07-02T19:41:27 - ProcesadorTareaServiceImpl
+2023-07-02 19:41:27,123 [Thread-9] INFO  c.u.t.threads.ExecutorThread - [THREAD_EXECUTOR] - Inicio ejecucion hilo: Thread-9 - 2023-07-02T19:41:27 - ExecutorThread
+2023-07-02 19:41:40,274 [http-nio-8083-exec-6] INFO  c.u.t.c.ProcesadorTareaController - [CONTROLLER] - Recibido: 2023-07-02T19:41:40.274696500 - ProcesadorTareaController
+2023-07-02 19:41:40,274 [http-nio-8083-exec-6] INFO  c.u.t.s.ProcesadorTareaServiceImpl - [SERVICE_EXECUTION] - Creando tarea con id: 6d9a1b64-1706-45f7-9194-40e74153798e - 2023-07-02T19:41:40 - ProcesadorTareaServiceImpl
+2023-07-02 19:41:40,275 [http-nio-8083-exec-6] DEBUG org.hibernate.SQL - select t1_0.id,t1_0.task_details,t1_0.resultado,t1_0.status,t1_0.task_type from task t1_0 where t1_0.id=?
+2023-07-02 19:41:40,276 [http-nio-8083-exec-6] DEBUG org.hibernate.SQL - insert into task (task_details, resultado, status, task_type, id) values (?, ?, ?, ?, ?)
+2023-07-02 19:41:40,276 [http-nio-8083-exec-6] INFO  c.u.t.communication.MessageQueue - [CONFIGURATION] - Cola de mensajes ya creado. Objeto MessageQueue(queue=[]) - MessageQueue
+2023-07-02 19:41:40,276 [http-nio-8083-exec-6] INFO  c.u.t.s.ProcesadorTareaServiceImpl - [SERVICE_EXECUTION] - Creando hilo para tarea con id: 6d9a1b64-1706-45f7-9194-40e74153798e - 2023-07-02T19:41:40 - ProcesadorTareaServiceImpl
+2023-07-02 19:41:40,277 [Thread-10] INFO  c.u.t.threads.ExecutorThread - [THREAD_EXECUTOR] - Inicio ejecucion hilo: Thread-10 - 2023-07-02T19:41:40 - ExecutorThread
+2023-07-02 19:41:42,139 [Thread-9] INFO  c.u.t.threads.ExecutorThread - [THREAD_EXECUTOR] - Buscando tarea con id: 9173f7d9-b1ca-42e2-8479-d1fb4c8c9048 - 2023-07-02T19:41:42 - Thread-9
+2023-07-02 19:41:42,140 [Thread-9] DEBUG org.hibernate.SQL - select t1_0.id,t1_0.task_details,t1_0.resultado,t1_0.status,t1_0.task_type from task t1_0 where t1_0.id=?
+2023-07-02 19:41:42,140 [Thread-9] INFO  c.u.t.threads.ExecutorThread - [THREAD_EXECUTOR] - Tarea encontrada con id: 9173f7d9-b1ca-42e2-8479-d1fb4c8c9048 - 2023-07-02T19:41:42 - Thread-9
+2023-07-02 19:41:42,141 [Thread-9] INFO  c.u.t.threads.ExecutorThread - [THREAD_EXECUTOR] - Hilo: Thread-9 - para tarea de tipo BRAILE - 2023-07-02T19:41:42 - ExecutorThread
+2023-07-02 19:41:42,142 [Thread-9] INFO  c.u.t.threads.ExecutorThread - [THREAD_EXECUTOR] - Guardando tarea con id: 9173f7d9-b1ca-42e2-8479-d1fb4c8c9048 EN PROGRESO - 2023-07-02T19:41:42 - Thread-9
+2023-07-02 19:41:42,142 [Thread-9] DEBUG org.hibernate.SQL - select t1_0.id,t1_0.task_details,t1_0.resultado,t1_0.status,t1_0.task_type from task t1_0 where t1_0.id=?
+2023-07-02 19:41:42,143 [Thread-9] DEBUG org.hibernate.SQL - update task set task_details=?, resultado=?, status=?, task_type=? where id=?
+2023-07-02 19:41:42,143 [Thread-9] INFO  c.u.t.threads.ExecutorThread - [THREAD_EXECUTOR] - Hilo: Thread-9 enviando mensaje - 2023-07-02T19:41:42 - ExecutorThread
+2023-07-02 19:41:42,143 [Thread-9] INFO  c.u.t.communication.MessageProducer - [MESSAGE_PRODUCER] - Envio: 2023-07-02T19:41:42 - enviando mensaje con id: 9173f7d9-b1ca-42e2-8479-d1fb4c8c9048 - Hilo: Thread-9 - MessageProducer
+2023-07-02 19:41:42,143 [Thread-9] INFO  c.u.t.communication.MessageQueue - [MESSAGE_QUEUE] - Agregando mensaje con id: 9173f7d9-b1ca-42e2-8479-d1fb4c8c9048 - MessageQueue
+2023-07-02 19:41:42,232 [task-1] INFO  c.u.t.communication.MessageConsumer - [MESSAGE_CONSUMER] - COLA CON MENSAJES DENTRO. 2023-07-02T19:41:42 - MessageConsumer
+2023-07-02 19:41:42,232 [task-1] INFO  c.u.t.communication.MessageConsumer - [MESSAGE_CONSUMER] - Inicio: 2023-07-02T19:41:42 - procesando mensaje con id: 9173f7d9-b1ca-42e2-8479-d1fb4c8c9048 - MessageConsumer
+2023-07-02 19:41:42,233 [task-1] DEBUG org.hibernate.SQL - update task set status=?,resultado=? where id=?
+2023-07-02 19:41:55,291 [Thread-10] INFO  c.u.t.threads.ExecutorThread - [THREAD_EXECUTOR] - Buscando tarea con id: 6d9a1b64-1706-45f7-9194-40e74153798e - 2023-07-02T19:41:55 - Thread-10
+2023-07-02 19:41:55,291 [Thread-10] DEBUG org.hibernate.SQL - select t1_0.id,t1_0.task_details,t1_0.resultado,t1_0.status,t1_0.task_type from task t1_0 where t1_0.id=?
+2023-07-02 19:41:55,292 [Thread-10] INFO  c.u.t.threads.ExecutorThread - [THREAD_EXECUTOR] - Tarea encontrada con id: 6d9a1b64-1706-45f7-9194-40e74153798e - 2023-07-02T19:41:55 - Thread-10
+2023-07-02 19:41:55,292 [Thread-10] INFO  c.u.t.threads.ExecutorThread - [THREAD_EXECUTOR] - Hilo: Thread-10 - para tarea de tipo TEXT_TRANSFORM - 2023-07-02T19:41:55 - ExecutorThread
+2023-07-02 19:41:55,293 [Thread-10] INFO  c.u.t.threads.ExecutorThread - [THREAD_EXECUTOR] - Guardando tarea con id: 6d9a1b64-1706-45f7-9194-40e74153798e EN PROGRESO - 2023-07-02T19:41:55 - Thread-10
+2023-07-02 19:41:55,293 [Thread-10] DEBUG org.hibernate.SQL - select t1_0.id,t1_0.task_details,t1_0.resultado,t1_0.status,t1_0.task_type from task t1_0 where t1_0.id=?
+2023-07-02 19:41:55,294 [Thread-10] DEBUG org.hibernate.SQL - update task set task_details=?, resultado=?, status=?, task_type=? where id=?
+2023-07-02 19:41:55,294 [Thread-10] INFO  c.u.t.threads.ExecutorThread - [THREAD_EXECUTOR] - Hilo: Thread-10 enviando mensaje - 2023-07-02T19:41:55 - ExecutorThread
+2023-07-02 19:41:55,294 [Thread-10] INFO  c.u.t.communication.MessageProducer - [MESSAGE_PRODUCER] - Envio: 2023-07-02T19:41:55 - enviando mensaje con id: 6d9a1b64-1706-45f7-9194-40e74153798e - Hilo: Thread-10 - MessageProducer
+2023-07-02 19:41:55,294 [Thread-10] INFO  c.u.t.communication.MessageQueue - [MESSAGE_QUEUE] - Agregando mensaje con id: 6d9a1b64-1706-45f7-9194-40e74153798e - MessageQueue
+2023-07-02 19:41:55,456 [http-nio-8083-exec-8] INFO  c.u.t.c.ProcesadorTareaController - [CONTROLLER] - Recibido: 2023-07-02T19:41:55.456623400 - ProcesadorTareaController
+2023-07-02 19:41:55,456 [http-nio-8083-exec-8] INFO  c.u.t.s.ProcesadorTareaServiceImpl - [SERVICE_EXECUTION] - Creando tarea con id: f50cdd5a-6abe-44a0-a047-676ff5224d62 - 2023-07-02T19:41:55 - ProcesadorTareaServiceImpl
+2023-07-02 19:41:55,457 [http-nio-8083-exec-8] DEBUG org.hibernate.SQL - select t1_0.id,t1_0.task_details,t1_0.resultado,t1_0.status,t1_0.task_type from task t1_0 where t1_0.id=?
+2023-07-02 19:41:55,457 [http-nio-8083-exec-8] DEBUG org.hibernate.SQL - insert into task (task_details, resultado, status, task_type, id) values (?, ?, ?, ?, ?)
+2023-07-02 19:41:55,458 [http-nio-8083-exec-8] INFO  c.u.t.communication.MessageQueue - [CONFIGURATION] - Cola de mensajes ya creado. Objeto MessageQueue(queue=[Message(requestId=6d9a1b64-1706-45f7-9194-40e74153798e, resultado=hola burrito)]) - MessageQueue
+2023-07-02 19:41:55,458 [http-nio-8083-exec-8] INFO  c.u.t.s.ProcesadorTareaServiceImpl - [SERVICE_EXECUTION] - Creando hilo para tarea con id: f50cdd5a-6abe-44a0-a047-676ff5224d62 - 2023-07-02T19:41:55 - ProcesadorTareaServiceImpl
+2023-07-02 19:41:55,458 [Thread-11] INFO  c.u.t.threads.ExecutorThread - [THREAD_EXECUTOR] - Inicio ejecucion hilo: Thread-11 - 2023-07-02T19:41:55 - ExecutorThread
+2023-07-02 19:41:55,492 [task-1] INFO  c.u.t.communication.MessageConsumer - [MESSAGE_CONSUMER] - COLA CON MENSAJES DENTRO. 2023-07-02T19:41:55 - MessageConsumer
+2023-07-02 19:41:55,492 [task-1] INFO  c.u.t.communication.MessageConsumer - [MESSAGE_CONSUMER] - Inicio: 2023-07-02T19:41:55 - procesando mensaje con id: 6d9a1b64-1706-45f7-9194-40e74153798e - MessageConsumer
+2023-07-02 19:41:55,493 [task-1] DEBUG org.hibernate.SQL - update task set status=?,resultado=? where id=?
+2023-07-02 19:42:04,646 [http-nio-8083-exec-10] INFO  c.u.t.c.ProcesadorTareaController - [CONTROLLER] - Recibido: 2023-07-02T19:42:04.646689900 - ProcesadorTareaController
+2023-07-02 19:42:04,647 [http-nio-8083-exec-10] INFO  c.u.t.s.ProcesadorTareaServiceImpl - [SERVICE_EXECUTION] - Creando tarea con id: 1e287072-a84f-4be1-82f8-21b34cb9a31b - 2023-07-02T19:42:04 - ProcesadorTareaServiceImpl
+2023-07-02 19:42:04,647 [http-nio-8083-exec-10] DEBUG org.hibernate.SQL - select t1_0.id,t1_0.task_details,t1_0.resultado,t1_0.status,t1_0.task_type from task t1_0 where t1_0.id=?
+2023-07-02 19:42:04,648 [http-nio-8083-exec-10] DEBUG org.hibernate.SQL - insert into task (task_details, resultado, status, task_type, id) values (?, ?, ?, ?, ?)
+2023-07-02 19:42:04,648 [http-nio-8083-exec-10] INFO  c.u.t.communication.MessageQueue - [CONFIGURATION] - Cola de mensajes ya creado. Objeto MessageQueue(queue=[]) - MessageQueue
+2023-07-02 19:42:04,648 [http-nio-8083-exec-10] INFO  c.u.t.s.ProcesadorTareaServiceImpl - [SERVICE_EXECUTION] - Creando hilo para tarea con id: 1e287072-a84f-4be1-82f8-21b34cb9a31b - 2023-07-02T19:42:04 - ProcesadorTareaServiceImpl
+2023-07-02 19:42:04,649 [Thread-12] INFO  c.u.t.threads.ExecutorThread - [THREAD_EXECUTOR] - Inicio ejecucion hilo: Thread-12 - 2023-07-02T19:42:04 - ExecutorThread
+2023-07-02 19:42:10,460 [Thread-11] INFO  c.u.t.threads.ExecutorThread - [THREAD_EXECUTOR] - Buscando tarea con id: f50cdd5a-6abe-44a0-a047-676ff5224d62 - 2023-07-02T19:42:10 - Thread-11
+2023-07-02 19:42:10,460 [Thread-11] DEBUG org.hibernate.SQL - select t1_0.id,t1_0.task_details,t1_0.resultado,t1_0.status,t1_0.task_type from task t1_0 where t1_0.id=?
+2023-07-02 19:42:10,461 [Thread-11] INFO  c.u.t.threads.ExecutorThread - [THREAD_EXECUTOR] - Tarea encontrada con id: f50cdd5a-6abe-44a0-a047-676ff5224d62 - 2023-07-02T19:42:10 - Thread-11
+2023-07-02 19:42:10,461 [Thread-11] INFO  c.u.t.threads.ExecutorThread - [THREAD_EXECUTOR] - Hilo: Thread-11 - para tarea de tipo HASH_PW - 2023-07-02T19:42:10 - ExecutorThread
+2023-07-02 19:42:10,462 [Thread-11] INFO  c.u.t.threads.ExecutorThread - [THREAD_EXECUTOR] - Guardando tarea con id: f50cdd5a-6abe-44a0-a047-676ff5224d62 EN PROGRESO - 2023-07-02T19:42:10 - Thread-11
+2023-07-02 19:42:10,463 [Thread-11] DEBUG org.hibernate.SQL - select t1_0.id,t1_0.task_details,t1_0.resultado,t1_0.status,t1_0.task_type from task t1_0 where t1_0.id=?
+2023-07-02 19:42:10,463 [Thread-11] DEBUG org.hibernate.SQL - update task set task_details=?, resultado=?, status=?, task_type=? where id=?
+2023-07-02 19:42:10,463 [Thread-11] INFO  c.u.t.threads.ExecutorThread - [THREAD_EXECUTOR] - Hilo: Thread-11 enviando mensaje - 2023-07-02T19:42:10 - ExecutorThread
+2023-07-02 19:42:10,464 [Thread-11] INFO  c.u.t.communication.MessageProducer - [MESSAGE_PRODUCER] - Envio: 2023-07-02T19:42:10 - enviando mensaje con id: f50cdd5a-6abe-44a0-a047-676ff5224d62 - Hilo: Thread-11 - MessageProducer
+2023-07-02 19:42:10,464 [Thread-11] INFO  c.u.t.communication.MessageQueue - [MESSAGE_QUEUE] - Agregando mensaje con id: f50cdd5a-6abe-44a0-a047-676ff5224d62 - MessageQueue
+2023-07-02 19:42:10,802 [task-1] INFO  c.u.t.communication.MessageConsumer - [MESSAGE_CONSUMER] - COLA CON MENSAJES DENTRO. 2023-07-02T19:42:10 - MessageConsumer
+2023-07-02 19:42:10,802 [task-1] INFO  c.u.t.communication.MessageConsumer - [MESSAGE_CONSUMER] - Inicio: 2023-07-02T19:42:10 - procesando mensaje con id: f50cdd5a-6abe-44a0-a047-676ff5224d62 - MessageConsumer
+2023-07-02 19:42:10,803 [task-1] DEBUG org.hibernate.SQL - update task set status=?,resultado=? where id=?
+2023-07-02 19:42:19,661 [Thread-12] INFO  c.u.t.threads.ExecutorThread - [THREAD_EXECUTOR] - Buscando tarea con id: 1e287072-a84f-4be1-82f8-21b34cb9a31b - 2023-07-02T19:42:19 - Thread-12
+2023-07-02 19:42:19,661 [Thread-12] DEBUG org.hibernate.SQL - select t1_0.id,t1_0.task_details,t1_0.resultado,t1_0.status,t1_0.task_type from task t1_0 where t1_0.id=?
+2023-07-02 19:42:19,662 [Thread-12] INFO  c.u.t.threads.ExecutorThread - [THREAD_EXECUTOR] - Tarea encontrada con id: 1e287072-a84f-4be1-82f8-21b34cb9a31b - 2023-07-02T19:42:19 - Thread-12
+2023-07-02 19:42:19,662 [Thread-12] INFO  c.u.t.threads.ExecutorThread - [THREAD_EXECUTOR] - Hilo: Thread-12 - para tarea de tipo CUIL - 2023-07-02T19:42:19 - ExecutorThread
+2023-07-02 19:42:19,665 [Thread-12] INFO  c.u.t.threads.ExecutorThread - [THREAD_EXECUTOR] - Guardando tarea con id: 1e287072-a84f-4be1-82f8-21b34cb9a31b EN PROGRESO - 2023-07-02T19:42:19 - Thread-12
+2023-07-02 19:42:19,666 [Thread-12] DEBUG org.hibernate.SQL - select t1_0.id,t1_0.task_details,t1_0.resultado,t1_0.status,t1_0.task_type from task t1_0 where t1_0.id=?
+2023-07-02 19:42:19,666 [Thread-12] DEBUG org.hibernate.SQL - update task set task_details=?, resultado=?, status=?, task_type=? where id=?
+2023-07-02 19:42:19,667 [Thread-12] INFO  c.u.t.threads.ExecutorThread - [THREAD_EXECUTOR] - Hilo: Thread-12 enviando mensaje - 2023-07-02T19:42:19 - ExecutorThread
+2023-07-02 19:42:19,667 [Thread-12] INFO  c.u.t.communication.MessageProducer - [MESSAGE_PRODUCER] - Envio: 2023-07-02T19:42:19 - enviando mensaje con id: 1e287072-a84f-4be1-82f8-21b34cb9a31b - Hilo: Thread-12 - MessageProducer
+2023-07-02 19:42:19,667 [Thread-12] INFO  c.u.t.communication.MessageQueue - [MESSAGE_QUEUE] - Agregando mensaje con id: 1e287072-a84f-4be1-82f8-21b34cb9a31b - MessageQueue
+2023-07-02 19:42:19,959 [task-1] INFO  c.u.t.communication.MessageConsumer - [MESSAGE_CONSUMER] - COLA CON MENSAJES DENTRO. 2023-07-02T19:42:19 - MessageConsumer
+2023-07-02 19:42:19,959 [task-1] INFO  c.u.t.communication.MessageConsumer - [MESSAGE_CONSUMER] - Inicio: 2023-07-02T19:42:19 - procesando mensaje con id: 1e287072-a84f-4be1-82f8-21b34cb9a31b - MessageConsumer
+2023-07-02 19:42:19,960 [task-1] DEBUG org.hibernate.SQL - update task set status=?,resultado=? where id=?
+2023-07-02 19:42:44,401 [http-nio-8083-exec-2] INFO  c.u.t.c.ProcesadorTareaController - [CONTROLLER] - Recibido: 2023-07-02T19:42:44.401801500 - ProcesadorTareaController
+2023-07-02 19:42:44,402 [http-nio-8083-exec-2] INFO  c.u.t.s.ProcesadorTareaServiceImpl - [SERVICE_EXECUTION] - Creando tarea con id: 472dee58-a4a5-4113-b036-ccc5168d4bb8 - 2023-07-02T19:42:44 - ProcesadorTareaServiceImpl
+2023-07-02 19:42:44,403 [http-nio-8083-exec-2] DEBUG org.hibernate.SQL - select t1_0.id,t1_0.task_details,t1_0.resultado,t1_0.status,t1_0.task_type from task t1_0 where t1_0.id=?
+2023-07-02 19:42:44,403 [http-nio-8083-exec-2] DEBUG org.hibernate.SQL - insert into task (task_details, resultado, status, task_type, id) values (?, ?, ?, ?, ?)
+2023-07-02 19:42:44,404 [http-nio-8083-exec-2] INFO  c.u.t.communication.MessageQueue - [CONFIGURATION] - Cola de mensajes ya creado. Objeto MessageQueue(queue=[]) - MessageQueue
+2023-07-02 19:42:44,404 [http-nio-8083-exec-2] INFO  c.u.t.s.ProcesadorTareaServiceImpl - [SERVICE_EXECUTION] - Creando hilo para tarea con id: 472dee58-a4a5-4113-b036-ccc5168d4bb8 - 2023-07-02T19:42:44 - ProcesadorTareaServiceImpl
+2023-07-02 19:42:44,404 [Thread-13] INFO  c.u.t.threads.ExecutorThread - [THREAD_EXECUTOR] - Inicio ejecucion hilo: Thread-13 - 2023-07-02T19:42:44 - ExecutorThread
+2023-07-02 19:42:59,413 [Thread-13] INFO  c.u.t.threads.ExecutorThread - [THREAD_EXECUTOR] - Buscando tarea con id: 472dee58-a4a5-4113-b036-ccc5168d4bb8 - 2023-07-02T19:42:59 - Thread-13
+2023-07-02 19:42:59,414 [Thread-13] DEBUG org.hibernate.SQL - select t1_0.id,t1_0.task_details,t1_0.resultado,t1_0.status,t1_0.task_type from task t1_0 where t1_0.id=?
+2023-07-02 19:42:59,414 [Thread-13] INFO  c.u.t.threads.ExecutorThread - [THREAD_EXECUTOR] - Tarea encontrada con id: 472dee58-a4a5-4113-b036-ccc5168d4bb8 - 2023-07-02T19:42:59 - Thread-13
+2023-07-02 19:42:59,414 [Thread-13] INFO  c.u.t.threads.ExecutorThread - [THREAD_EXECUTOR] - Hilo: Thread-13 - para tarea de tipo CUIL - 2023-07-02T19:42:59 - ExecutorThread
+2023-07-02 19:42:59,415 [Thread-13] INFO  c.u.t.threads.ExecutorThread - [THREAD_EXECUTOR] - Guardando tarea con id: 472dee58-a4a5-4113-b036-ccc5168d4bb8 EN PROGRESO - 2023-07-02T19:42:59 - Thread-13
+2023-07-02 19:42:59,415 [Thread-13] DEBUG org.hibernate.SQL - select t1_0.id,t1_0.task_details,t1_0.resultado,t1_0.status,t1_0.task_type from task t1_0 where t1_0.id=?
+2023-07-02 19:42:59,415 [Thread-13] DEBUG org.hibernate.SQL - update task set task_details=?, resultado=?, status=?, task_type=? where id=?
+2023-07-02 19:42:59,416 [Thread-13] INFO  c.u.t.threads.ExecutorThread - [THREAD_EXECUTOR] - Hilo: Thread-13 enviando mensaje - 2023-07-02T19:42:59 - ExecutorThread
+2023-07-02 19:42:59,416 [Thread-13] INFO  c.u.t.communication.MessageProducer - [MESSAGE_PRODUCER] - Envio: 2023-07-02T19:42:59 - enviando mensaje con id: 472dee58-a4a5-4113-b036-ccc5168d4bb8 - Hilo: Thread-13 - MessageProducer
+2023-07-02 19:42:59,416 [Thread-13] INFO  c.u.t.communication.MessageQueue - [MESSAGE_QUEUE] - Agregando mensaje con id: 472dee58-a4a5-4113-b036-ccc5168d4bb8 - MessageQueue
+2023-07-02 19:42:59,711 [task-1] INFO  c.u.t.communication.MessageConsumer - [MESSAGE_CONSUMER] - COLA CON MENSAJES DENTRO. 2023-07-02T19:42:59 - MessageConsumer
+2023-07-02 19:42:59,711 [task-1] INFO  c.u.t.communication.MessageConsumer - [MESSAGE_CONSUMER] - Inicio: 2023-07-02T19:42:59 - procesando mensaje con id: 472dee58-a4a5-4113-b036-ccc5168d4bb8 - MessageConsumer
+2023-07-02 19:42:59,712 [task-1] DEBUG org.hibernate.SQL - update task set status=?,resultado=? where id=?
+2023-07-02 19:43:37,224 [http-nio-8083-exec-3] INFO  c.u.t.c.ProcesadorTareaController - [CONTROLLER] - Obteniendo info para id: 0003265a-7e45-4789-874c-783a9a0018ee - 2023-07-02T19:43:37.224552 - ProcesadorTareaController
+2023-07-02 19:43:37,224 [http-nio-8083-exec-3] INFO  c.u.t.s.ProcesadorTareaServiceImpl - [SERVICE_EXECUTION] - Buscando resultado de tarea con id: 0003265a-7e45-4789-874c-783a9a0018ee - 2023-07-02T19:43:37 - ProcesadorTareaServiceImpl
+2023-07-02 19:43:37,225 [http-nio-8083-exec-3] DEBUG org.hibernate.SQL - select t1_0.id,t1_0.task_details,t1_0.resultado,t1_0.status,t1_0.task_type from task t1_0 where t1_0.id=?
+2023-07-02 19:43:37,226 [http-nio-8083-exec-3] INFO  c.u.t.s.ProcesadorTareaServiceImpl - [SERVICE_EXECUTION] - Tarea encontrada con id: 0003265a-7e45-4789-874c-783a9a0018ee - 2023-07-02T19:43:37 - ProcesadorTareaServiceImpl
+2023-07-02 19:43:42,763 [http-nio-8083-exec-4] INFO  c.u.t.c.ProcesadorTareaController - [CONTROLLER] - Obteniendo info para id: 9173f7d9-b1ca-42e2-8479-d1fb4c8c9048 - 2023-07-02T19:43:42.763176100 - ProcesadorTareaController
+2023-07-02 19:43:42,763 [http-nio-8083-exec-4] INFO  c.u.t.s.ProcesadorTareaServiceImpl - [SERVICE_EXECUTION] - Buscando resultado de tarea con id: 9173f7d9-b1ca-42e2-8479-d1fb4c8c9048 - 2023-07-02T19:43:42 - ProcesadorTareaServiceImpl
+2023-07-02 19:43:42,764 [http-nio-8083-exec-4] DEBUG org.hibernate.SQL - select t1_0.id,t1_0.task_details,t1_0.resultado,t1_0.status,t1_0.task_type from task t1_0 where t1_0.id=?
+2023-07-02 19:43:42,764 [http-nio-8083-exec-4] INFO  c.u.t.s.ProcesadorTareaServiceImpl - [SERVICE_EXECUTION] - Tarea encontrada con id: 9173f7d9-b1ca-42e2-8479-d1fb4c8c9048 - 2023-07-02T19:43:42 - ProcesadorTareaServiceImpl
+2023-07-02 19:43:48,141 [http-nio-8083-exec-5] INFO  c.u.t.c.ProcesadorTareaController - [CONTROLLER] - Obteniendo info para id: 6d9a1b64-1706-45f7-9194-40e74153798e - 2023-07-02T19:43:48.141599500 - ProcesadorTareaController
+2023-07-02 19:43:48,141 [http-nio-8083-exec-5] INFO  c.u.t.s.ProcesadorTareaServiceImpl - [SERVICE_EXECUTION] - Buscando resultado de tarea con id: 6d9a1b64-1706-45f7-9194-40e74153798e - 2023-07-02T19:43:48 - ProcesadorTareaServiceImpl
+2023-07-02 19:43:48,142 [http-nio-8083-exec-5] DEBUG org.hibernate.SQL - select t1_0.id,t1_0.task_details,t1_0.resultado,t1_0.status,t1_0.task_type from task t1_0 where t1_0.id=?
+2023-07-02 19:43:48,142 [http-nio-8083-exec-5] INFO  c.u.t.s.ProcesadorTareaServiceImpl - [SERVICE_EXECUTION] - Tarea encontrada con id: 6d9a1b64-1706-45f7-9194-40e74153798e - 2023-07-02T19:43:48 - ProcesadorTareaServiceImpl
+2023-07-02 19:43:52,643 [http-nio-8083-exec-7] INFO  c.u.t.c.ProcesadorTareaController - [CONTROLLER] - Recibido: 2023-07-02T19:43:52.643702700 - ProcesadorTareaController
+2023-07-02 19:43:52,643 [http-nio-8083-exec-7] INFO  c.u.t.s.ProcesadorTareaServiceImpl - [SERVICE_EXECUTION] - Creando tarea con id: 1cd7e3c0-16fc-4929-b084-95fceff2d429 - 2023-07-02T19:43:52 - ProcesadorTareaServiceImpl
+2023-07-02 19:43:52,644 [http-nio-8083-exec-7] DEBUG org.hibernate.SQL - select t1_0.id,t1_0.task_details,t1_0.resultado,t1_0.status,t1_0.task_type from task t1_0 where t1_0.id=?
+2023-07-02 19:43:52,644 [http-nio-8083-exec-7] DEBUG org.hibernate.SQL - insert into task (task_details, resultado, status, task_type, id) values (?, ?, ?, ?, ?)
+2023-07-02 19:43:52,645 [http-nio-8083-exec-7] INFO  c.u.t.communication.MessageQueue - [CONFIGURATION] - Cola de mensajes ya creado. Objeto MessageQueue(queue=[]) - MessageQueue
+2023-07-02 19:43:52,645 [http-nio-8083-exec-7] INFO  c.u.t.s.ProcesadorTareaServiceImpl - [SERVICE_EXECUTION] - Creando hilo para tarea con id: 1cd7e3c0-16fc-4929-b084-95fceff2d429 - 2023-07-02T19:43:52 - ProcesadorTareaServiceImpl
+2023-07-02 19:43:52,645 [Thread-14] INFO  c.u.t.threads.ExecutorThread - [THREAD_EXECUTOR] - Inicio ejecucion hilo: Thread-14 - 2023-07-02T19:43:52 - ExecutorThread
+2023-07-02 19:43:56,059 [http-nio-8083-exec-8] INFO  c.u.t.c.ProcesadorTareaController - [CONTROLLER] - Obteniendo info para id: f50cdd5a-6abe-44a0-a047-676ff5224d62 - 2023-07-02T19:43:56.059463900 - ProcesadorTareaController
+2023-07-02 19:43:56,059 [http-nio-8083-exec-8] INFO  c.u.t.s.ProcesadorTareaServiceImpl - [SERVICE_EXECUTION] - Buscando resultado de tarea con id: f50cdd5a-6abe-44a0-a047-676ff5224d62 - 2023-07-02T19:43:56 - ProcesadorTareaServiceImpl
+2023-07-02 19:43:56,061 [http-nio-8083-exec-8] DEBUG org.hibernate.SQL - select t1_0.id,t1_0.task_details,t1_0.resultado,t1_0.status,t1_0.task_type from task t1_0 where t1_0.id=?
+2023-07-02 19:43:56,061 [http-nio-8083-exec-8] INFO  c.u.t.s.ProcesadorTareaServiceImpl - [SERVICE_EXECUTION] - Tarea encontrada con id: f50cdd5a-6abe-44a0-a047-676ff5224d62 - 2023-07-02T19:43:56 - ProcesadorTareaServiceImpl
+2023-07-02 19:44:07,654 [Thread-14] INFO  c.u.t.threads.ExecutorThread - [THREAD_EXECUTOR] - Buscando tarea con id: 1cd7e3c0-16fc-4929-b084-95fceff2d429 - 2023-07-02T19:44:07 - Thread-14
+2023-07-02 19:44:07,654 [Thread-14] DEBUG org.hibernate.SQL - select t1_0.id,t1_0.task_details,t1_0.resultado,t1_0.status,t1_0.task_type from task t1_0 where t1_0.id=?
+2023-07-02 19:44:07,655 [Thread-14] INFO  c.u.t.threads.ExecutorThread - [THREAD_EXECUTOR] - Tarea encontrada con id: 1cd7e3c0-16fc-4929-b084-95fceff2d429 - 2023-07-02T19:44:07 - Thread-14
+2023-07-02 19:44:07,655 [Thread-14] INFO  c.u.t.threads.ExecutorThread - [THREAD_EXECUTOR] - Hilo: Thread-14 - para tarea de tipo TEXT_TRANSFORM - 2023-07-02T19:44:07 - ExecutorThread
+2023-07-02 19:44:07,655 [Thread-14] INFO  c.u.t.threads.ExecutorThread - [THREAD_EXECUTOR] - Guardando tarea con id: 1cd7e3c0-16fc-4929-b084-95fceff2d429 EN PROGRESO - 2023-07-02T19:44:07 - Thread-14
+2023-07-02 19:44:07,656 [Thread-14] DEBUG org.hibernate.SQL - select t1_0.id,t1_0.task_details,t1_0.resultado,t1_0.status,t1_0.task_type from task t1_0 where t1_0.id=?
+2023-07-02 19:44:07,656 [Thread-14] DEBUG org.hibernate.SQL - update task set task_details=?, resultado=?, status=?, task_type=? where id=?
+2023-07-02 19:44:07,656 [Thread-14] INFO  c.u.t.threads.ExecutorThread - [THREAD_EXECUTOR] - Hilo: Thread-14 enviando mensaje - 2023-07-02T19:44:07 - ExecutorThread
+2023-07-02 19:44:07,656 [Thread-14] INFO  c.u.t.communication.MessageProducer - [MESSAGE_PRODUCER] - Envio: 2023-07-02T19:44:07 - enviando mensaje con id: 1cd7e3c0-16fc-4929-b084-95fceff2d429 - Hilo: Thread-14 - MessageProducer
+2023-07-02 19:44:07,656 [Thread-14] INFO  c.u.t.communication.MessageQueue - [MESSAGE_QUEUE] - Agregando mensaje con id: 1cd7e3c0-16fc-4929-b084-95fceff2d429 - MessageQueue
+2023-07-02 19:44:07,967 [task-1] INFO  c.u.t.communication.MessageConsumer - [MESSAGE_CONSUMER] - COLA CON MENSAJES DENTRO. 2023-07-02T19:44:07 - MessageConsumer
+2023-07-02 19:44:07,967 [task-1] INFO  c.u.t.communication.MessageConsumer - [MESSAGE_CONSUMER] - Inicio: 2023-07-02T19:44:07 - procesando mensaje con id: 1cd7e3c0-16fc-4929-b084-95fceff2d429 - MessageConsumer
+2023-07-02 19:44:07,967 [task-1] DEBUG org.hibernate.SQL - update task set status=?,resultado=? where id=?
+2023-07-02 19:44:13,305 [http-nio-8083-exec-9] INFO  c.u.t.c.ProcesadorTareaController - [CONTROLLER] - Obteniendo info para id: f50cdd5a-6abe-44a0-a047-676ff5224d62 - 2023-07-02T19:44:13.305739300 - ProcesadorTareaController
+2023-07-02 19:44:13,305 [http-nio-8083-exec-9] INFO  c.u.t.s.ProcesadorTareaServiceImpl - [SERVICE_EXECUTION] - Buscando resultado de tarea con id: f50cdd5a-6abe-44a0-a047-676ff5224d62 - 2023-07-02T19:44:13 - ProcesadorTareaServiceImpl
+2023-07-02 19:44:13,306 [http-nio-8083-exec-9] DEBUG org.hibernate.SQL - select t1_0.id,t1_0.task_details,t1_0.resultado,t1_0.status,t1_0.task_type from task t1_0 where t1_0.id=?
+2023-07-02 19:44:13,306 [http-nio-8083-exec-9] INFO  c.u.t.s.ProcesadorTareaServiceImpl - [SERVICE_EXECUTION] - Tarea encontrada con id: f50cdd5a-6abe-44a0-a047-676ff5224d62 - 2023-07-02T19:44:13 - ProcesadorTareaServiceImpl
+2023-07-02 19:44:33,504 [http-nio-8083-exec-10] INFO  c.u.t.c.ProcesadorTareaController - [CONTROLLER] - Obteniendo info para id: 1e287072-a84f-4be1-82f8-21b34cb9a31b - 2023-07-02T19:44:33.504753500 - ProcesadorTareaController
+2023-07-02 19:44:33,504 [http-nio-8083-exec-10] INFO  c.u.t.s.ProcesadorTareaServiceImpl - [SERVICE_EXECUTION] - Buscando resultado de tarea con id: 1e287072-a84f-4be1-82f8-21b34cb9a31b - 2023-07-02T19:44:33 - ProcesadorTareaServiceImpl
+2023-07-02 19:44:33,504 [http-nio-8083-exec-10] DEBUG org.hibernate.SQL - select t1_0.id,t1_0.task_details,t1_0.resultado,t1_0.status,t1_0.task_type from task t1_0 where t1_0.id=?
+2023-07-02 19:44:33,505 [http-nio-8083-exec-10] INFO  c.u.t.s.ProcesadorTareaServiceImpl - [SERVICE_EXECUTION] - Tarea encontrada con id: 1e287072-a84f-4be1-82f8-21b34cb9a31b - 2023-07-02T19:44:33 - ProcesadorTareaServiceImpl
+2023-07-02 19:44:37,571 [http-nio-8083-exec-1] INFO  c.u.t.c.ProcesadorTareaController - [CONTROLLER] - Obteniendo info para id: 472dee58-a4a5-4113-b036-ccc5168d4bb8 - 2023-07-02T19:44:37.571303800 - ProcesadorTareaController
+2023-07-02 19:44:37,571 [http-nio-8083-exec-1] INFO  c.u.t.s.ProcesadorTareaServiceImpl - [SERVICE_EXECUTION] - Buscando resultado de tarea con id: 472dee58-a4a5-4113-b036-ccc5168d4bb8 - 2023-07-02T19:44:37 - ProcesadorTareaServiceImpl
+2023-07-02 19:44:37,572 [http-nio-8083-exec-1] DEBUG org.hibernate.SQL - select t1_0.id,t1_0.task_details,t1_0.resultado,t1_0.status,t1_0.task_type from task t1_0 where t1_0.id=?
+2023-07-02 19:44:37,572 [http-nio-8083-exec-1] INFO  c.u.t.s.ProcesadorTareaServiceImpl - [SERVICE_EXECUTION] - Tarea encontrada con id: 472dee58-a4a5-4113-b036-ccc5168d4bb8 - 2023-07-02T19:44:37 - ProcesadorTareaServiceImpl
+2023-07-02 19:44:45,610 [http-nio-8083-exec-3] INFO  c.u.t.c.ProcesadorTareaController - [CONTROLLER] - Recibido: 2023-07-02T19:44:45.610456100 - ProcesadorTareaController
+2023-07-02 19:44:45,610 [http-nio-8083-exec-3] INFO  c.u.t.s.ProcesadorTareaServiceImpl - [SERVICE_EXECUTION] - Creando tarea con id: a6984851-4260-4ebf-b856-ed995169aa3e - 2023-07-02T19:44:45 - ProcesadorTareaServiceImpl
+2023-07-02 19:44:45,611 [http-nio-8083-exec-3] DEBUG org.hibernate.SQL - select t1_0.id,t1_0.task_details,t1_0.resultado,t1_0.status,t1_0.task_type from task t1_0 where t1_0.id=?
+2023-07-02 19:44:45,612 [http-nio-8083-exec-3] DEBUG org.hibernate.SQL - insert into task (task_details, resultado, status, task_type, id) values (?, ?, ?, ?, ?)
+2023-07-02 19:44:45,612 [http-nio-8083-exec-3] INFO  c.u.t.communication.MessageQueue - [CONFIGURATION] - Cola de mensajes ya creado. Objeto MessageQueue(queue=[]) - MessageQueue
+2023-07-02 19:44:45,612 [http-nio-8083-exec-3] INFO  c.u.t.s.ProcesadorTareaServiceImpl - [SERVICE_EXECUTION] - Creando hilo para tarea con id: a6984851-4260-4ebf-b856-ed995169aa3e - 2023-07-02T19:44:45 - ProcesadorTareaServiceImpl
+2023-07-02 19:44:45,612 [Thread-15] INFO  c.u.t.threads.ExecutorThread - [THREAD_EXECUTOR] - Inicio ejecucion hilo: Thread-15 - 2023-07-02T19:44:45 - ExecutorThread
+2023-07-02 19:45:00,620 [Thread-15] INFO  c.u.t.threads.ExecutorThread - [THREAD_EXECUTOR] - Buscando tarea con id: a6984851-4260-4ebf-b856-ed995169aa3e - 2023-07-02T19:45 - Thread-15
+2023-07-02 19:45:00,620 [Thread-15] DEBUG org.hibernate.SQL - select t1_0.id,t1_0.task_details,t1_0.resultado,t1_0.status,t1_0.task_type from task t1_0 where t1_0.id=?
+2023-07-02 19:45:00,621 [Thread-15] INFO  c.u.t.threads.ExecutorThread - [THREAD_EXECUTOR] - Tarea encontrada con id: a6984851-4260-4ebf-b856-ed995169aa3e - 2023-07-02T19:45 - Thread-15
+2023-07-02 19:45:00,621 [Thread-15] INFO  c.u.t.threads.ExecutorThread - [THREAD_EXECUTOR] - Hilo: Thread-15 - para tarea de tipo TEXT_TRANSFORM - 2023-07-02T19:45 - ExecutorThread
+2023-07-02 19:45:00,621 [Thread-15] INFO  c.u.t.threads.ExecutorThread - [THREAD_EXECUTOR] - Guardando tarea con id: a6984851-4260-4ebf-b856-ed995169aa3e EN PROGRESO - 2023-07-02T19:45 - Thread-15
+2023-07-02 19:45:00,622 [Thread-15] DEBUG org.hibernate.SQL - select t1_0.id,t1_0.task_details,t1_0.resultado,t1_0.status,t1_0.task_type from task t1_0 where t1_0.id=?
+2023-07-02 19:45:00,622 [Thread-15] DEBUG org.hibernate.SQL - update task set task_details=?, resultado=?, status=?, task_type=? where id=?
+2023-07-02 19:45:00,622 [Thread-15] INFO  c.u.t.threads.ExecutorThread - [THREAD_EXECUTOR] - Hilo: Thread-15 enviando mensaje - 2023-07-02T19:45 - ExecutorThread
+2023-07-02 19:45:00,623 [Thread-15] INFO  c.u.t.communication.MessageProducer - [MESSAGE_PRODUCER] - Envio: 2023-07-02T19:45 - enviando mensaje con id: a6984851-4260-4ebf-b856-ed995169aa3e - Hilo: Thread-15 - MessageProducer
+2023-07-02 19:45:00,623 [Thread-15] INFO  c.u.t.communication.MessageQueue - [MESSAGE_QUEUE] - Agregando mensaje con id: a6984851-4260-4ebf-b856-ed995169aa3e - MessageQueue
+2023-07-02 19:45:00,884 [task-1] INFO  c.u.t.communication.MessageConsumer - [MESSAGE_CONSUMER] - COLA CON MENSAJES DENTRO. 2023-07-02T19:45 - MessageConsumer
+2023-07-02 19:45:00,884 [task-1] INFO  c.u.t.communication.MessageConsumer - [MESSAGE_CONSUMER] - Inicio: 2023-07-02T19:45 - procesando mensaje con id: a6984851-4260-4ebf-b856-ed995169aa3e - MessageConsumer
+2023-07-02 19:45:00,885 [task-1] DEBUG org.hibernate.SQL - update task set status=?,resultado=? where id=?
+2023-07-02 19:45:02,770 [http-nio-8083-exec-4] INFO  c.u.t.c.ProcesadorTareaController - [CONTROLLER] - Obteniendo info para id: 9173f7d9-b1ca-42e2-8479-d1fb4c8c9048 - 2023-07-02T19:45:02.770507600 - ProcesadorTareaController
+2023-07-02 19:45:02,770 [http-nio-8083-exec-4] INFO  c.u.t.s.ProcesadorTareaServiceImpl - [SERVICE_EXECUTION] - Buscando resultado de tarea con id: 9173f7d9-b1ca-42e2-8479-d1fb4c8c9048 - 2023-07-02T19:45:02 - ProcesadorTareaServiceImpl
+2023-07-02 19:45:02,771 [http-nio-8083-exec-4] DEBUG org.hibernate.SQL - select t1_0.id,t1_0.task_details,t1_0.resultado,t1_0.status,t1_0.task_type from task t1_0 where t1_0.id=?
+2023-07-02 19:45:02,772 [http-nio-8083-exec-4] INFO  c.u.t.s.ProcesadorTareaServiceImpl - [SERVICE_EXECUTION] - Tarea encontrada con id: 9173f7d9-b1ca-42e2-8479-d1fb4c8c9048 - 2023-07-02T19:45:02 - ProcesadorTareaServiceImpl
+2023-07-02 19:57:12,852 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-07-02 19:57:12,852 [SpringApplicationShutdownHook] INFO  o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2023-07-02 19:57:12,853 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - drop table if exists task cascade 
+2023-07-02 19:57:12,852 [task-1] ERROR o.s.a.i.SimpleAsyncUncaughtExceptionHandler - Unexpected exception occurred invoking async method: public void com.unlam.tp_integrador.communication.MessageConsumer.consumeMessages() throws java.lang.InterruptedException
+java.lang.InterruptedException: sleep interrupted
+	at java.base/java.lang.Thread.sleep(Native Method)
+	at com.unlam.tp_integrador.communication.MessageConsumer.consumeMessages(MessageConsumer.java:32)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750)
+	at org.springframework.aop.interceptor.AsyncExecutionInterceptor.lambda$invoke$0(AsyncExecutionInterceptor.java:115)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-07-02 19:57:13,270 [SpringApplicationShutdownHook] WARN  o.s.b.f.s.DisposableBeanAdapter - Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-214]
+2023-07-02 19:57:13,271 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-07-02 19:57:13,411 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

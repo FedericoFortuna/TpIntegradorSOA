@@ -35,13 +35,13 @@ public class MapperTareaTest {
         dummyMap.put(keyMap, dummyObj);
 
         tareaDTOForNewTarea = TareaDTO.builder()
-                .tipoTarea(TipoTarea.CALCULATION)
+                .tipoTarea(TipoTarea.HASH_PW)
                 .detalleTarea(dummyMap)
                 .build();
 
         tareaDTO = TareaDTO.builder()
                 .id(dummyId)
-                .tipoTarea(TipoTarea.CALCULATION)
+                .tipoTarea(TipoTarea.HASH_PW)
                 .detalleTarea(dummyMap)
                 .statusTarea(StatusTarea.EN_PROGRESO)
                 .build();

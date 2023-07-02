@@ -12,31 +12,34 @@ import org.mockito.MockitoAnnotations;
 import java.util.HashMap;
 import java.util.Map;
 
+import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.Mockito.mock;
+
 public class CuilStrategyTest {
 
     private CuilStrategy cuilStrategy;
 
-    private final String DNI_KEY = "dni";
-    private final String GENERO_KEY = "genero";
+    private final String DNI_KEY = "text";
+    private final String GENERO_KEY = "operation";
+    String dni = "12345678";
+    String genero = "M";
+
+    private final Map<String, Object> detalleTarea = new HashMap<>();
     @Mock
     private TareaDTO tareaDTO;
 
     @BeforeEach
     public void setup() {
         MockitoAnnotations.openMocks(this);
+
+        detalleTarea.put(DNI_KEY, dni);
+        detalleTarea.put(GENERO_KEY, genero);
+        Mockito.when(tareaDTO.getDetalleTarea()).thenReturn(detalleTarea);
         cuilStrategy = new CuilStrategy();
     }
 
     @Test
     public void testCuilStrategyWithMaleGender() {
-        String dni = "12345678";
-        String genero = "M";
-
-        Map<String, Object> detalleTarea = new HashMap<>();
-        detalleTarea.put(DNI_KEY, dni);
-        detalleTarea.put(GENERO_KEY, genero);
-
-        Mockito.when(tareaDTO.getDetalleTarea()).thenReturn(detalleTarea);
 
         String result = cuilStrategy.process(tareaDTO);
 

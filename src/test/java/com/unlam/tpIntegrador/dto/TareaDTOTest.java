@@ -32,7 +32,7 @@ public class TareaDTOTest {
         map.put(MAP_KEY, list);
 
         dto = TareaDTO.builder()
-                .tipoTarea(TipoTarea.CALCULATION)
+                .tipoTarea(TipoTarea.HASH_PW)
                 .detalleTarea(map)
                 .build();
     }

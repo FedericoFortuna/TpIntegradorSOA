@@ -68,7 +68,7 @@ public class BraileTransformStrategy implements ProcesamientoStrategy {
     @Override
     public String process(TareaDTO tareaDTO) {
         String texto = String.valueOf(tareaDTO.getDetalleTarea().get(MAP_KEY));
-        
+
         StringBuilder braille = new StringBuilder();
         for (char c : texto.toLowerCase().toCharArray()) {
             // Obtener la representación en braille del carácter

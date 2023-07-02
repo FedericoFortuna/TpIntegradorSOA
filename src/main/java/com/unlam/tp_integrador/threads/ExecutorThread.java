@@ -11,11 +11,7 @@ import com.unlam.tp_integrador.exceptions.UnexpectedException;
 import com.unlam.tp_integrador.mapper.MapperTarea;
 import com.unlam.tp_integrador.processor.ProcesadorTarea;
 import com.unlam.tp_integrador.repositories.TareaRepository;
-import com.unlam.tp_integrador.strategy.process.BraileTransformStrategy;
-import com.unlam.tp_integrador.strategy.process.CalculationStrategy;
-import com.unlam.tp_integrador.strategy.process.HasherStrategy;
-import com.unlam.tp_integrador.strategy.process.TextTransformStrategy;
-import com.unlam.tp_integrador.strategy.process.CuilStrategy;
+import com.unlam.tp_integrador.strategy.process.*;
 import com.unlam.tp_integrador.tools.LoggingTag;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,11 +30,7 @@ public class ExecutorThread extends Thread {
     private final String INSERT_TASK_IN_PROGRESS = "{} - Guardando tarea con id: {} EN PROGRESO - {} - {}";
     private final String TASK_NOT_FOUND = "{} - Tarea no encontrada - {} - {}";
     private final String ERROR = "{} - Error en sleep thread - {} - {}";
-    private final String CALCULATION_TASK = "{} - Hilo: {} - para tarea de tipo {} - {} - {}";
-    private final String TEXT_TRANSFORM_TASK = "{} - Hilo: {} - para tarea de tipo {} - {} - {}";
-    private final String HASH_PW_TASK = "{} - Hilo: {} - para tarea de tipo {} - {} - {}";
-    private final String BRAILE_TASK = "{} - Hilo: {} - para tarea de tipo {} - {} - {}";
-    private final String CUIL_TASK = "{} - Hilo: {} - para tarea de tipo {} - {} - {}";
+    private final String TASK = "{} - Hilo: {} - para tarea de tipo {} - {} - {}";
 
     private final TareaDTO tareaDTO;
     private final ProcesadorTarea procesadorTarea;
@@ -88,26 +80,26 @@ public class ExecutorThread extends Thread {
     }
 
 
-    private void process(TareaDTO tareaDTO, TipoTarea tipoTarea){
+    private void process(TareaDTO tareaDTO, TipoTarea tipoTarea) {
         if (tipoTarea.equals(TipoTarea.CALCULATION)) {
-            log.info(CALCULATION_TASK, LoggingTag.THREAD, Thread.currentThread().getName(), tipoTarea,LocalDateTime.now().withNano(0), ExecutorThread.class.getSimpleName());
+            log.info(TASK, LoggingTag.THREAD, Thread.currentThread().getName(), tipoTarea, LocalDateTime.now().withNano(0), ExecutorThread.class.getSimpleName());
             procesadorTarea.procesarTarea(tareaDTO, new CalculationStrategy());
         } else if (tipoTarea.equals(TipoTarea.TEXT_TRANSFORM)) {
-            log.info(TEXT_TRANSFORM_TASK, LoggingTag.THREAD, Thread.currentThread().getName(), tipoTarea,LocalDateTime.now().withNano(0), ExecutorThread.class.getSimpleName());
+            log.info(TASK, LoggingTag.THREAD, Thread.currentThread().getName(), tipoTarea, LocalDateTime.now().withNano(0), ExecutorThread.class.getSimpleName());
             procesadorTarea.procesarTarea(tareaDTO, new TextTransformStrategy());
-        } else if (tipoTarea.equals(TipoTarea.HASH_PW)){
-            log.info(HASH_PW_TASK, LoggingTag.THREAD, Thread.currentThread().getName(), tipoTarea,LocalDateTime.now().withNano(0), ExecutorThread.class.getSimpleName());
+        } else if (tipoTarea.equals(TipoTarea.HASH_PW)) {
+            log.info(TASK, LoggingTag.THREAD, Thread.currentThread().getName(), tipoTarea, LocalDateTime.now().withNano(0), ExecutorThread.class.getSimpleName());
             procesadorTarea.procesarTarea(tareaDTO, new HasherStrategy());
-        } else if (tipoTarea.equals(TipoTarea.BRAILE)){
-            log.info(BRAILE_TASK, LoggingTag.THREAD, Thread.currentThread().getName(), tipoTarea,LocalDateTime.now().withNano(0), ExecutorThread.class.getSimpleName());
+        } else if (tipoTarea.equals(TipoTarea.BRAILE)) {
+            log.info(TASK, LoggingTag.THREAD, Thread.currentThread().getName(), tipoTarea, LocalDateTime.now().withNano(0), ExecutorThread.class.getSimpleName());
             procesadorTarea.procesarTarea(tareaDTO, new BraileTransformStrategy());
-        } else if (tipoTarea.equals(TipoTarea.CUIL)){
-            log.info(CUIL_TASK, LoggingTag.THREAD, Thread.currentThread().getName(), tipoTarea,LocalDateTime.now().withNano(0), ExecutorThread.class.getSimpleName());
+        } else if (tipoTarea.equals(TipoTarea.CUIL)) {
+            log.info(TASK, LoggingTag.THREAD, Thread.currentThread().getName(), tipoTarea, LocalDateTime.now().withNano(0), ExecutorThread.class.getSimpleName());
             procesadorTarea.procesarTarea(tareaDTO, new CuilStrategy());
         }
     }
 
-    private void sendMessage(TareaDTO tareaDTO){
+    private void sendMessage(TareaDTO tareaDTO) {
         log.info(SEND_MESSAGE, LoggingTag.THREAD, Thread.currentThread().getName(), LocalDateTime.now().withNano(0), ExecutorThread.class.getSimpleName());
         mp.sendMessage(Message.builder()
                 .requestId(tareaDTO.getId())
@@ -115,7 +107,7 @@ public class ExecutorThread extends Thread {
                 .build());
     }
 
-    private void saveNewStatus(){
+    private void saveNewStatus() {
         tareaDTO.setStatusTarea(StatusTarea.EN_PROGRESO);
         log.info(INSERT_TASK_IN_PROGRESS, LoggingTag.THREAD, this.tareaDTO.getId(), LocalDateTime.now().withNano(0), Thread.currentThread().getName());
         tareaRepository.save(MapperTarea.toEntity(tareaDTO));

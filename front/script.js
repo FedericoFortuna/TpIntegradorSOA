@@ -59,7 +59,7 @@ $(document).ready(function() {});
       type: 'GET',
       success: function(data) {
         var parsedData = JSON.parse(data);
-        $('#inputResult').val(parsedData.resultado);
+        $('#resultadoTarea').val(parsedData.resultado);
       },
       error: function(error) {
         console.log(error);

@@ -6,9 +6,9 @@ import java.util.Objects;
 
 public class CuilStrategy implements ProcesamientoStrategy {
 
-    private final String MAP_KEY = "dni";
+    private final String MAP_KEY = "text";
 
-    private final String MAP_KEY_OPERATION = "genero";
+    private final String MAP_KEY_OPERATION = "operation";
 
     private final String MASCULINO = "M";
     private final String FEMENINO = "F";

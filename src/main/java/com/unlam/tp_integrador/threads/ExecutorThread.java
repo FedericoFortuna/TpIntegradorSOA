@@ -81,10 +81,7 @@ public class ExecutorThread extends Thread {
 
 
     private void process(TareaDTO tareaDTO, TipoTarea tipoTarea) {
-        if (tipoTarea.equals(TipoTarea.CALCULATION)) {
-            log.info(TASK, LoggingTag.THREAD, Thread.currentThread().getName(), tipoTarea, LocalDateTime.now().withNano(0), ExecutorThread.class.getSimpleName());
-            procesadorTarea.procesarTarea(tareaDTO, new CalculationStrategy());
-        } else if (tipoTarea.equals(TipoTarea.TEXT_TRANSFORM)) {
+       if (tipoTarea.equals(TipoTarea.TEXT_TRANSFORM)) {
             log.info(TASK, LoggingTag.THREAD, Thread.currentThread().getName(), tipoTarea, LocalDateTime.now().withNano(0), ExecutorThread.class.getSimpleName());
             procesadorTarea.procesarTarea(tareaDTO, new TextTransformStrategy());
         } else if (tipoTarea.equals(TipoTarea.HASH_PW)) {

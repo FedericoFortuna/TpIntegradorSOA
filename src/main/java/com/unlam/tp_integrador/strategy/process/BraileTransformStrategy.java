@@ -8,12 +8,11 @@ import java.util.Map;
 public class BraileTransformStrategy implements ProcesamientoStrategy {
 
     private final String MAP_KEY = "text";
+    private final Map<Character, String> mapaBraille = new HashMap<>();
 
-    @Override
-    public String process(TareaDTO tareaDTO) {
-        String texto = String.valueOf(tareaDTO.getDetalleTarea().get(MAP_KEY));
+    public BraileTransformStrategy(){
         // Mapa de mapeo de caracteres a su representación en braille
-        Map<Character, String> mapaBraille = new HashMap<>();
+
         mapaBraille.put(' ', "⠀");  // Espacio en blanco
         mapaBraille.put('a', "⠁");
         mapaBraille.put('b', "⠃");
@@ -64,8 +63,12 @@ public class BraileTransformStrategy implements ProcesamientoStrategy {
         mapaBraille.put('*', "⠔");
         mapaBraille.put('/', "⠴");
         mapaBraille.put('=', "⠶");
-        // Agregar más mapeos de caracteres a su representación en braille
+    }
 
+    @Override
+    public String process(TareaDTO tareaDTO) {
+        String texto = String.valueOf(tareaDTO.getDetalleTarea().get(MAP_KEY));
+        
         StringBuilder braille = new StringBuilder();
         for (char c : texto.toLowerCase().toCharArray()) {
             // Obtener la representación en braille del carácter

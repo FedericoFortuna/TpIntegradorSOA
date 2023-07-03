@@ -43,6 +43,7 @@ $(document).ready(function() {});
       contentType: 'application/json',
       success: function(data) {
         $('#inputResult').val(data);
+        $('#inputText').val("");
       },
       error: function(error) {
         console.log(error);
